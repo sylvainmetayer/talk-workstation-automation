@@ -1,0 +1,30 @@
+== Dotfiles, c'est quoi ?
+
+[quote,https://wiki.archlinux.org/title/Dotfiles]
+User-specific application configuration is traditionally
+stored in so called dotfiles (files whose filename starts with a dot).
+
+
+== Exemple
+
+[%linenums,shell]
+.~/.bashrc
+----
+#!/usr/bin/env bash
+
+if [ -f /etc/bashrc ]; then
+ . /etc/bashrc
+fi
+
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+# ...
+----
+
+> Et d'autres : vimrc, gitconfig, ...
+
+== Comment fait-on ?
+
+https://dotfiles.github.io/
+
+https://github.com/webpro/awesome-dotfiles
+

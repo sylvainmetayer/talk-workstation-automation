@@ -1,0 +1,38 @@
+include::001-presentation.adoc[]
+
+
+== Avantages / Inconvénients
+
+// FIXME Table ne rentre pas en entier
+
+[%autowidth.stretch,cols="1,1"]
+|===
+|Objectif | État
+|Gérer mes fichiers de configuration
+|?
+|Gérer les logiciels installés
+|?
+|Versionnable
+|?
+|Facilement maintenable
+|?
+|Gérer mon poste de travail pro et perso
+|?
+|Gestion de secrets
+|?
+|===
+
+[.notes]
+****
+Garder la config de mon prompt custom, gérer mes fichiers config ...
+
+Préciser que mot de passe = clé SSH / API
+
+Plan :
+
+- Dotfiles
+- Stow
+- Un script maison
+- Ansible
+****
+

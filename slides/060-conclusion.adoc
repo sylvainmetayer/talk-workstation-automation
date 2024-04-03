@@ -1,0 +1,30 @@
+[.transparency]
+== Conclusion
+
+image::standards.png[alt='Standard']
+
+https://github.com/sylvainmetayer/dotfiles
+
+[.notes]
+****
+- Courbe apprentissage un peu nécessaire
+****
+
+[.columns.transparency%notitle]
+== !
+
+image::devoxx/DevoxxFR2024_0004.jpg[background,size=fill]
+
+[.column]
+--
+[caption=]
+.https://workstation-automation.talks.sylvain.dev
+image::slides_link.svg[height=300,alt='Slides']
+--
+
+[.column]
+--
+[caption=]
+.Vos retours
+image::openfeedback.svg[height=300,alt='Vos retours']
+--
