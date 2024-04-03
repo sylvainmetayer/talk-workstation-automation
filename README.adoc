@@ -1,6 +1,6 @@
 = Automate your workstation installation
 
-Slides available on https://sylvainmetayer.github.io/talk-workstation-automaion/#/[Github Pages]
+Slides available on https://workstation-automation.talks.sylvain.dev[Github Pages]
 
 == Generate
 
