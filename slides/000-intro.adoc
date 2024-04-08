@@ -3,9 +3,7 @@ include::001-presentation.adoc[]
 
 == Avantages / Inconvénients
 
-// FIXME Table ne rentre pas en entier
-
-[%autowidth.stretch,cols="1,1"]
+[height=50.stretch,cols="1,1"]
 |===
 |Objectif | État
 |Gérer mes fichiers de configuration

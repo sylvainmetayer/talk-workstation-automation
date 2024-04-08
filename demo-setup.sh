@@ -13,3 +13,4 @@ echo "Battery saver"
 kubectx -u || true
 
 firefox -P work 'https://asdf.talks.sylvain.dev/'  'http://localhost:8000'
+systemctl restart --user xremap

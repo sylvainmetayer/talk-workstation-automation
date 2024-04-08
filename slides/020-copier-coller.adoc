@@ -4,8 +4,6 @@ image::c_v.gif[alt='Copier-coller gif']
 
 === Avantages / Inconvénients
 
-// FIXME Table
-
 [%autowidth.stretch,cols="1,1"]
 |===
 |Objectif | État

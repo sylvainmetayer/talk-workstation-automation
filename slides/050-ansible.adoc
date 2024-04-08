@@ -43,7 +43,8 @@ image::tell_me_more.gif[alt='Tell me more',width=80%]
   tasks:
     - name: "Simple task"
       debug:
-        msg: "Hello, SnowCamp !"
+        msg: |-
+include::../code/public_data.txt[]
   roles:
     - role: geerlingguy.docker
       become: true
@@ -102,8 +103,6 @@ OK vs changed
 
 === Installation de paquets
 
-// TODO Multiple slides
-
 [%linenums,yaml]
 .roles/commons/defaults/main.yaml
 ----
@@ -145,11 +144,12 @@ roles/symlink
 │   └── .vimrc
 ----
 
-[%linenums,yaml,highlight=1-2|7-12]
+[%linenums,yaml,highlight=7-11]
+.roles/symlink/tasks/main.yaml
 ----
-# item = .vimrc
-# roles/symlink/tasks/main.yaml
+---
 
+# item = .vimrc
 # [...] Create folders
 # [...] Ensure file does not exists
 
@@ -162,7 +162,7 @@ roles/symlink
 
 [.notes]
 ****
-réplique comportement stow
+Réplique comportement stow
 ****
 
 === Templating
@@ -176,8 +176,8 @@ réplique comportement stow
 ----
 
 [%linenums,ini]
+.roles/git_config/templates/gitconfig.j2
 ----
-# roles/git_config/templates/gitconfig.j2
 [user]
 {% if git_config_user is defined %}
   name = {{ git_config_user }}
@@ -209,23 +209,15 @@ réplique comportement stow
 
 [.notes]
 ****
-speaker: ansible transparent sur usage vault, va utiliser password indiqué.
+ansible transparent sur usage vault, va utiliser password indiqué.
 Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
 ****
 
 === Gestion des secrets
 
-// FIXME Update sample secret
-
 [%linenums,bash]
 ----
-$ cat secret_data.txt
-$ANSIBLE_VAULT;1.1;AES256
-66346336343766663038323062316537383065383137633163363434666232653335653833346633
-3838343030646662306232346361393431656537653635310a353034343734643333303064363235
-33666538383165666434343435613861666161663535313938623461326435386266633162343139
-3233386634303566630a666238303633336266363237336461643435626238363134363430636230
-35613437313833373662306239373830383766656135646136313535366231336363
+include::../code/secret_data.txt[]
 ----
 
 [.notes]
@@ -236,12 +228,12 @@ Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à c
 
 === Gestion des secrets
 
-[%linenums,bash,highlight=1|2-4|5]
+[%linenums,shell,highlight=1|2-4|5]
 ----
-$ ansible-vault create secret_data.txt
+ansible-vault create secret_data.txt
 $ ansible-vault view secret_data.txt
 Vault password:
-Bonjour SnowCamp ! :)
+include::../code/public_data.txt[]
 $ ansible-playbook playbooks/demo/main.yaml --ask-vault-pass
 ----
 
@@ -249,6 +241,9 @@ $ ansible-playbook playbooks/demo/main.yaml --ask-vault-pass
 ****
 ansible transparent sur usage vault, va utiliser password indiqué.
 Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
+
+mot de passe =
+include::../code/password_file[]
 ****
 
 === Plusieurs postes ?
@@ -263,10 +258,10 @@ Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à c
 
 === Mais encore ?
 
-// FIXME auto animate
-
 image::battery_off.png[alt='Indicateur batterie off']
 
+[.fragment]
+--
 [%linenums,yaml]
 ----
 - name: Display battery percentage
@@ -279,13 +274,13 @@ image::battery_off.png[alt='Indicateur batterie off']
 image::battery_on.png[alt='Indicateur batterie on']
 
 Windows (regedit) : link:https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html[win_regedit_module]
+--
 
 === Petite démo
 
 video::demo.mp4[width=1200,opts="autoplay,loop,muted"]
 
 === Avantages / Inconvénients
-// FIXME Table
 
 [%autowidth.stretch,cols="1,1"]
 |===

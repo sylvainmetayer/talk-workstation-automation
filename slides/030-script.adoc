@@ -3,7 +3,6 @@
 Du shell, du python, du C, du PHP... Venez comme vous êtes, on va coder !
 
 === Avantages / Inconvénients
-// FIXME Table
 
 [%autowidth.stretch,cols="1,1"]
 |===

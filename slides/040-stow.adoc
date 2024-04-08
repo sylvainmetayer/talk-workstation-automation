@@ -5,8 +5,6 @@ GNU Stow is a symlink farm manager which takes distinct sets of software and/or 
 
 === Avantages / Inconvénients
 
-// FIXME Table
-
 [%autowidth.stretch,cols="1,1"]
 |===
 |Objectif | État
