@@ -421,7 +421,7 @@ ul.byline li + li {
 <div class="openblock column"><div class="content"><div class="paragraph vertical-align-middle"><p><span class="image"><img src="images/logo.png" alt="logo" width="250"></span></p></div>
 <div class="paragraph"><p>Tech Lead <a href="https://www.groupeonepoint.com/fr/">@Onepoint</a></p></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Conteneur / k8s quotidien, outils cloud évoluent rapidement et sont nombreux</p></div></aside></div></section>
-<section id="_avantages_inconvénients"><h2>Avantages / Inconvénients</h2><div class="slide-content"><table class="tableblock frame-all grid-all stretch"><colgroup><col><col></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Objectif</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">État</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mes fichiers de configuration</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer les logiciels installés</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Versionnable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Facilement maintenable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mon poste de travail pro et perso</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gestion de secrets</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr></table>
+<section id="_avantages_inconvénients"><h2>Avantages / Inconvénients</h2><div class="slide-content"><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Objectif</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">État</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mes fichiers de configuration</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer les logiciels installés</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Versionnable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Facilement maintenable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mon poste de travail pro et perso</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gestion de secrets</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td></tr></table>
 <aside class="notes"><div class="paragraph"><p>Garder la config de mon prompt custom, gérer mes fichiers config &#8230;&#8203;</p></div>
 <div class="paragraph"><p>Préciser que mot de passe = clé SSH / API</p></div>
 <div class="paragraph"><p>Plan :</p></div>
@@ -464,7 +464,8 @@ On choisit un langage qu&#8217;on aime !</p></li><li><p>Gestion de secret possib
   tasks:
     - name: "Simple task"
       debug:
-        msg: "Hello, SnowCamp !"
+        msg: |-
+Hello DevoxxFR ! :)
   roles:
     - role: geerlingguy.docker
       become: true
@@ -511,9 +512,9 @@ OK vs changed</p></div></aside></div></section><section id="_installation_de_paq
 │   │   ├── htop
 │   │   │   └── htoprc
 │   └── .vimrc</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="1,2|7,8,9,10,11,12" data-lang="yaml"># item = .vimrc
-# roles/symlink/tasks/main.yaml
+<div class="listingblock"><div class="title">roles/symlink/tasks/main.yaml</div><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="7,8,9,10,11" data-lang="yaml">---
 
+# item = .vimrc
 # [...] Create folders
 # [...] Ensure file does not exists
 
@@ -522,12 +523,11 @@ OK vs changed</p></div></aside></div></section><section id="_installation_de_paq
     src: "{{ role_path }}/files/{{ item }}"
     dest: ~/{{ item }}
     state: link</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>réplique comportement stow</p></div></aside></div></section><section id="_templating"><h2>Templating</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">- name: Template gitconfig
+<aside class="notes"><div class="paragraph"><p>Réplique comportement stow</p></div></aside></div></section><section id="_templating"><h2>Templating</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">- name: Template gitconfig
   ansible.builtin.template:
     src: templates/gitconfig.j2
     dest: "~/.gitconfig"</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-ini hljs" data-noescape="true" data-line-numbers="" data-lang="ini"># roles/git_config/templates/gitconfig.j2
-[user]
+<div class="listingblock"><div class="title">roles/git_config/templates/gitconfig.j2</div><div class="content"><pre class="highlightjs highlight"><code class="language-ini hljs" data-noescape="true" data-line-numbers="" data-lang="ini">[user]
 {% if git_config_user is defined %}
   name = {{ git_config_user }}
 {% endif %}
@@ -540,32 +540,33 @@ OK vs changed</p></div></aside></div></section><section id="_installation_de_paq
     src: "secret_data.txt"
     dest: ~/secret_data.txt
     mode: "0600"</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>ansible transparent sur usage vault, va utiliser password indiqué.
+Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_gestion_des_secrets_2"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ANSIBLE_VAULT;1.1;AES256
+34653738323662383137353263366461343336653562636239373764376263373336303464303664
+6139616262336561643032656632326534663032323465380a326338613533346436343830303138
+36316332643264623761396463373633383735343761653035383631383165663366326138633237
+6266643930663232360a373038663530323662613866383836663662623430633061396234623364
+62333264616136363238383433613062353664343063653139373262323233383833</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>speaker: ansible transparent sur usage vault, va utiliser password indiqué.
-Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_gestion_des_secrets_2"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ cat secret_data.txt
-$ANSIBLE_VAULT;1.1;AES256
-66346336343766663038323062316537383065383137633163363434666232653335653833346633
-3838343030646662306232346361393431656537653635310a353034343734643333303064363235
-33666538383165666434343435613861666161663535313938623461326435386266633162343139
-3233386634303566630a666238303633336266363237336461643435626238363134363430636230
-35613437313833373662306239373830383766656135646136313535366231336363</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>speaker: ansible transparent sur usage vault, va utiliser password indiqué.
-Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_gestion_des_secrets_3"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="1|2,3,4|5" data-lang="bash">$ ansible-vault create secret_data.txt
+Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_gestion_des_secrets_3"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3,4|5" data-lang="shell">ansible-vault create secret_data.txt
 $ ansible-vault view secret_data.txt
 Vault password:
-Bonjour SnowCamp ! :)
+Hello DevoxxFR ! :)
 $ ansible-playbook playbooks/demo/main.yaml --ask-vault-pass</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>ansible transparent sur usage vault, va utiliser password indiqué.
-Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_plusieurs_postes"><h2>Plusieurs postes ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="" data-lang="text">├── demo
+Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div>
+<div class="paragraph"><p>mot de passe =
+demo</p></div></aside></div></section><section id="_plusieurs_postes"><h2>Plusieurs postes ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="" data-lang="text">├── demo
 │   ├── main.yaml
 └── work
     └── main.yaml</code></pre></div></div></div></section><section id="_mais_encore"><h2>Mais encore ?</h2><div class="slide-content"><div class="imageblock"><img src="images/battery_off.png" alt="Indicateur batterie off"></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">- name: Display battery percentage
+<div class="openblock fragment"><div class="content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">- name: Display battery percentage
   dconf:
     key: "/org/gnome/desktop/interface/show-battery-percentage"
     value: "true"
     state: present</code></pre></div></div>
 <div class="imageblock"><img src="images/battery_on.png" alt="Indicateur batterie on"></div>
-<div class="paragraph"><p>Windows (regedit) : <a href="https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html">win_regedit_module</a></p></div></div></section><section id="_petite_démo"><h2>Petite démo</h2><div class="slide-content"><div class="videoblock"><video src="images/demo.mp4" width="1200" height="100%" data-autoplay controls loop>Your browser does not support the video tag.</video></div></div></section><section id="_avantages_inconvénients_5"><h2>Avantages / Inconvénients</h2><div class="slide-content"><table class="tableblock frame-all grid-all stretch"><colgroup><col><col></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Objectif</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">État</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mes fichiers de configuration</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer les logiciels installés</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Versionnable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Facilement maintenable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mon poste de travail pro et perso</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gestion de secrets</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr></table>
+<div class="paragraph"><p>Windows (regedit) : <a href="https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html">win_regedit_module</a></p></div></div></div></div></section><section id="_petite_démo"><h2>Petite démo</h2><div class="slide-content"><div class="videoblock"><video src="images/demo.mp4" width="1200" height="100%" data-autoplay controls loop>Your browser does not support the video tag.</video></div></div></section><section id="_avantages_inconvénients_5"><h2>Avantages / Inconvénients</h2><div class="slide-content"><table class="tableblock frame-all grid-all stretch"><colgroup><col><col></colgroup><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Objectif</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">État</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mes fichiers de configuration</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer les logiciels installés</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Versionnable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Facilement maintenable</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gérer mon poste de travail pro et perso</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr><tr><td class="tableblock halign-left valign-top"><p class="tableblock">Gestion de secrets</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td></tr></table>
 <aside class="notes"><div class="ulist"><ul><li><p>Peu de prérequis</p></li><li><p>Vous utilisez déjà ansible pour votre configuration de machines ?</p></li><li><p>Roles / Playbooks (séparer PC pro/perso)</p></li><li><p>Syntaxe YAML</p></li></ul></div>
 <div class="paragraph"><p>Cependant, si pas d&#8217;usage d&#8217;ansible autre que pour un seul poste, peu être "lourd" à mettre en place</p></div></aside></div></section><section id="_et_si_je_veux_faire"><h2>Et si je veux faire&#8230;&#8203;</h2><div class="slide-content"><div class="paragraph"><p><a href="https://docs.ansible.com/" class="bare">https://docs.ansible.com/</a></p></div>
 <div class="paragraph"><p><a href="https://galaxy.ansible.com/" class="bare">https://galaxy.ansible.com/</a></p></div></div></section></section>
