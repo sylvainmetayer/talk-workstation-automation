@@ -9,4 +9,4 @@ ansible-vault encrypt --vault-password-file code/password_file --output code/sec
 
 #qrencode https://app.voxxr.in/events/devoxxfr2024/rate-talk/21888 -o images/openfeedback.svg -t SVG -l H -m 2
 # TODO For DevoxxFR, update with tagged version
-#qrencode https://workstation-automation.talks.sylvain.dev -o images/slides_link.svg -t SVG -l H -m 2
+#qrencode https://workstation-automation.talks.sylvain.dev/devoxx2024 -o images/slides_link.svg -t SVG -l H -m 2
