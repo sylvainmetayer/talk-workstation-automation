@@ -27,6 +27,9 @@
 
 // TODO https://docs.asciidoctor.org/asciidoc/latest/subs/apply-subs-to-blocks/
 
+[id=french_flag]
+.
+
 @sylvain_metayer
 
 include::slides/000-intro.adoc[]

@@ -1,11 +1,11 @@
-== Dotfiles, c'est quoi ?
+== Dotfiles, what's this ?
 
 [quote,https://wiki.archlinux.org/title/Dotfiles]
 User-specific application configuration is traditionally
 stored in so called dotfiles (files whose filename starts with a dot).
 
 
-== Exemple
+== Example
 
 [%linenums,shell]
 .~/.bashrc
@@ -20,9 +20,9 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 # ...
 ----
 
-> Et d'autres : vimrc, gitconfig, ...
+> Others : vimrc, gitconfig, ...
 
-== Comment fait-on ?
+== How to do this ?
 
 https://dotfiles.github.io/
 

@@ -10,7 +10,7 @@ image::photo.png[]
 
 [.column.is-3.has-text-left.medium]
 --
-Sylvain MÉTAYER
+🇫🇷 Sylvain MÉTAYER
 
 link:https://sylvain.dev[]
 --

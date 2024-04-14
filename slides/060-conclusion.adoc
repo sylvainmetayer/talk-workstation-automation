@@ -10,7 +10,7 @@ https://github.com/sylvainmetayer/dotfiles
 - Courbe apprentissage un peu nécessaire
 ****
 
-[.columns.transparency%notitle]
+[.columns.transparency%notitle.is-vcentered]
 == !
 
 image::devoxx/DevoxxFR2024_0004.jpg[background,size=fill]
@@ -18,13 +18,18 @@ image::devoxx/DevoxxFR2024_0004.jpg[background,size=fill]
 [.column]
 --
 [caption=]
-.https://workstation-automation.talks.sylvain.dev
+.Slides
 image::slides_link.svg[height=300,alt='Slides']
 --
 
 [.column]
 --
+link:https://sylvain.dev[*sylvain.dev*]
+--
+
+[.column]
+--
 [caption=]
-.Vos retours
+.Feedback
 image::openfeedback.svg[height=300,alt='Vos retours']
 --

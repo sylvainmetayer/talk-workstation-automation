@@ -14,7 +14,7 @@ Notion communauté +++ qui va permettre de faire assemblage de roles pour répon
 Syntaxe YAML
 ****
 
-=== Concrètement, comment fait-on ?
+=== How to use it ?
 
 image::tell_me_more.gif[alt='Tell me more',width=80%]
 
@@ -101,7 +101,7 @@ Playbook run took 0 days, 0 hours, 0 minutes, 1 seconds
 OK vs changed
 ****
 
-=== Installation de paquets
+=== Software installation
 
 [%linenums,yaml]
 .roles/commons/defaults/main.yaml
@@ -196,7 +196,7 @@ Réplique comportement stow
 - Dire que possible si besoin de boucles à partir de variables, mais ne pas présenter et renvoyer vers la documentation
 ****
 
-=== Gestion des secrets
+=== Secrets
 
 [%linenums,yaml]
 ----
@@ -213,7 +213,7 @@ ansible transparent sur usage vault, va utiliser password indiqué.
 Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
 ****
 
-=== Gestion des secrets
+=== Secrets
 
 [%linenums,bash]
 ----
@@ -226,7 +226,7 @@ speaker: ansible transparent sur usage vault, va utiliser password indiqué.
 Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
 ****
 
-=== Gestion des secrets
+=== Secrets
 
 [%linenums,shell,highlight=1|2-4|5]
 ----
@@ -246,7 +246,7 @@ mot de passe =
 include::../code/password_file[]
 ****
 
-=== Plusieurs postes ?
+=== Many workstation ?
 
 [%linenums,text]
 ----
@@ -256,7 +256,7 @@ include::../code/password_file[]
     └── main.yaml
 ----
 
-=== Mais encore ?
+=== What else ?
 
 image::battery_off.png[alt='Indicateur batterie off']
 
@@ -276,26 +276,26 @@ image::battery_on.png[alt='Indicateur batterie on']
 Windows (regedit) : link:https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html[win_regedit_module]
 --
 
-=== Petite démo
+=== Demo
 
 video::demo.mp4[width=1200,opts="autoplay,loop,muted"]
 
-=== Avantages / Inconvénients
+=== Pros and Cons
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Objectif | État
-|Gérer mes fichiers de configuration
+|Goal | State
+|Manage my configuration files
 |✅
-|Gérer les logiciels installés
+|Manage my installed software
 |✅
-|Versionnable
+|Version Control
 |✅
-|Facilement maintenable
+|Maintainability
 |✅
-|Gérer mon poste de travail pro et perso
+|Manage personal and pro workstation
 |✅
-|Gestion de secrets
+|Can handle secrets
 |✅
 |===
 
@@ -310,7 +310,7 @@ Cependant, si pas d'usage d'ansible autre que pour un seul poste, peu être "lou
 
 ****
 
-=== Et si je veux faire...
+=== What if...
 
 https://docs.ansible.com/
 

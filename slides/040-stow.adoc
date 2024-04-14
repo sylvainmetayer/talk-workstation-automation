@@ -3,22 +3,22 @@
 [quote,https://www.gnu.org/software/stow/manual/stow.html#Bootstrapping]
 GNU Stow is a symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree.
 
-=== Avantages / Inconvénients
+=== Pros and Cons
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Objectif | État
-|Gérer mes fichiers de configuration
+|Goal | State
+|Manage my configuration files
 |✅
-|Gérer les logiciels installés
+|Manage my installed software
 |❌
-|Versionnable
+|Version Control
 |✅
-|Facilement maintenable
+|Maintainability
 |✅
-|Gérer mon poste de travail pro et perso
+|Manage personal and pro workstation
 |😐
-|Gestion de secrets
+|Can handle secrets
 |❌
 |===
 

@@ -1,23 +1,23 @@
-== Un script maison
+== Homemade script
 
-Du shell, du python, du C, du PHP... Venez comme vous êtes, on va coder !
+Shell, Python, C, PHP... Come as you are, let's code !
 
-=== Avantages / Inconvénients
+=== Pros and Cons
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Objectif | État
-|Gérer mes fichiers de configuration
+|Goal | State
+|Manage my configuration files
 |✅
-|Gérer les logiciels installés
+|Manage my installed software
 |✅
-|Versionnable
+|Version Control
 |✅
-|Facilement maintenable
+|Maintainability
 |😐
-|Gérer mon poste de travail pro et perso
+|Manage personal and pro workstation
 |✅
-|Gestion de secrets
+|Can handle secrets
 |✅
 |===
 

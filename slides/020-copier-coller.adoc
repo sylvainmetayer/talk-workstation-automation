@@ -1,23 +1,23 @@
-== Le bon vieux copier-coller
+== The good old copy and paste
 
 image::c_v.gif[alt='Copier-coller gif']
 
-=== Avantages / Inconvénients
+=== Pros and Cons
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Objectif | État
-|Gérer mes fichiers de configuration
+|Goal | State
+|Manage my configuration files
 |✅
-|Gérer les logiciels installés
+|Manage my installed software
 |❌
-|Versionnable
+|Version Control
 |😐
-|Facilement maintenable
+|Maintainability
 |❌
-|Gérer mon poste de travail pro et perso
+|Manage personal and pro workstation
 |❌
-|Gestion de secrets
+|Can handle secrets
 |❌
 |===
 
