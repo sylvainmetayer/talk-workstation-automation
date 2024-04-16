@@ -278,7 +278,7 @@ Windows (regedit) : link:https://docs.ansible.com/ansible/latest/collections/ans
 
 === Demo
 
-video::demo.mp4[width=1200,opts="autoplay,loop,muted"]
+video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
 
 === Pros and Cons
 
