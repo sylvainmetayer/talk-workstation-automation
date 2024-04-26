@@ -41,10 +41,14 @@
 }
 
 body::after {
-    /* TODO Better Logo ? */
-    content: url("../images/devoxx_united_kingdom_logo.jpg");
+    content: url("../images/devoxx_united_kingdom_logo.png");
     position: fixed;
-    bottom: 0;
+    top: 0;
+    opacity: 1;
+    background-color: white;
+    border: 1px solid black;
+    width: 20%;
+    height: 17%;
 }
 
 .reveal section h1 {
@@ -126,7 +130,6 @@ img {
     margin-left: 0;
 }
 
-
 .blur {
     filter: blur(4px);
 }
@@ -137,4 +140,8 @@ img {
 
 #_software_installation h2 {
     font-size: 2rem;
+}
+
+.language_logo img {
+    width: 45%;
 }

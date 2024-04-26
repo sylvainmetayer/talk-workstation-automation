@@ -21,15 +21,20 @@ include::001-presentation.adoc[]
 
 [.notes]
 ****
-Garder la config de mon prompt custom, gérer mes fichiers config ...
+I have a few criteria to choose a solution and have established this table to see if it fit my needs.
 
-Préciser que mot de passe = clé SSH / API
+Manage dotfiles, to keep the configuration of my installed software or my custom bash prompt, we'll talk about it later.
 
-Plan :
+Manage installed software, so I don't have to remember what is installed on a fresh install and can start working with my habitual tools.
 
-- Dotfiles
-- Stow
-- Un script maison
-- Ansible
+Version control so I can keep track of changes to my configuration, as you'd do with your code.
+
+Maintainable : I don't want to spend hours to configure/maintain something... To configure my workstation so I can work.
+
+Multiple workstation : I share some configuration/needs between my personal and professional workstation, and don't want to have to start over or duplicate all my configuration
+
+Secrets : Like everyone in this room, I have various secrets, SSH keys, password. I want a safe way to back up these without exposing these to the world.
+
+Annonce plan : We'll first start with a quick introduction of what dotfiles are, then we'll see a few options to manage these, before talking about the one I've chosen that fills my needs.
 ****
 

@@ -2,6 +2,12 @@
 
 image::c_v.gif[alt='Copier-coller gif']
 
+[.notes]
+****
+The first option is by far the simplest.
+Copy your configuration files in a git repository, commit and push, and you're good to go!
+****
+
 === Pros and Cons
 
 [%autowidth.stretch,cols="1,1"]
@@ -23,7 +29,12 @@ image::c_v.gif[alt='Copier-coller gif']
 
 [.notes]
 ****
-Rapide, simple, mais autrement, difficilement maintainable et nécessite une action manuelle.
+However, these are a few drawbacks to this method.
+
+First, you can indeed manage your dotfiles, but can't handle installed software, you'll have to reinstall them by yourself.
+You also don't really have an efficient version control tracking method, since you need to manually copy/paste everything.
+This cause that the maintainability of this solution can't be good, and you need to maintain two folders/repository to your professional and personal workstation.
+You also need to use another tool to store your secrets, since you don't want to store them in plaintext.
 ****
 
 

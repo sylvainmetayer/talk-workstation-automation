@@ -1,0 +1,6 @@
+---
+- name: Add repositories
+  ansible.builtin.include_tasks: repositories.yaml
+
+- name: Install packages
+  ansible.builtin.include_tasks: packages.yaml

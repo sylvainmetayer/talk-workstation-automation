@@ -11,8 +11,8 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: intro_devoxx.jpg
-:title-slide-background-size: fill
+:title-slide-background-image: devoxx_united_kingdom_cover.jpg
+:title-slide-background-size: cover
 :title-slide-filter: blur(4px)
 :stylesdir: css
 :customcss: css/meetup.css
@@ -27,10 +27,12 @@
 
 // TODO https://docs.asciidoctor.org/asciidoc/latest/subs/apply-subs-to-blocks/
 
-[id=french_flag]
-.
-
 @sylvain_metayer
+
+[.notes]
+****
+Welcome to this presentation where we'll talk about how we can automate our workstation installation
+****
 
 include::slides/000-intro.adoc[]
 include::slides/010-dotfiles.adoc[]

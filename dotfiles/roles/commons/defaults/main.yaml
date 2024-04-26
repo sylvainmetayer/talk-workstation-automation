@@ -1,0 +1,33 @@
+---
+commons_add_to_path:
+  - "$HOME/.local/bin"
+  - "$HOME/bin"
+  - "$HOME/.cargo/bin"
+
+# Will test the existence of the command and run script if available.
+commons_custom_scripts:
+  - command: starship
+    script: 'eval "$(starship init bash)"'
+  - command: npm
+    script: "source <(npm completion)"
+  - command: direnv
+    script: 'eval "$(direnv hook bash)"'
+  - command: fzf
+    script: "source $(asdf where fzf)/shell/key-bindings.bash"
+
+commons_symlinks:
+  - .vimrc
+  - .bash_aliases
+  - .tmux.conf
+  - .config/starship.toml
+  - .gnupg/gpg.conf
+  - .default-npm-packages
+  - .bashrc.d/_env.sh
+  - .bashrc.d/git_clean.sh
+  - .bashrc.d/gitignore.sh
+  - .bashrc.d/kill_me.sh
+  - .bashrc.d/load_env.sh
+
+setup_direnv: true
+setup_starship_init_script: true
+symlink_as_link: true

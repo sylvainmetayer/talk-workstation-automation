@@ -1,5 +1,5 @@
 [%notitle.columns.is-vcentered.transparency]
-== Présentation
+== Presentation
 
 image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
 
@@ -25,5 +25,9 @@ Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 
 [.notes]
 ****
-Conteneur / k8s quotidien, outils cloud évoluent rapidement et sont nombreux
+French speaker, located in Bordeaux, working at Onepoint as Tech Lead.
+
+This is the first time that I'm doing an English version of this talk and my first English talk, please be kind 😃
+
+My day-to-day tasks involve automation of various systems, working with containers and orchestrator such as Docker/Kubernetes. I'm trying to automate my tasks and decided to apply this to my own workstation.
 ****

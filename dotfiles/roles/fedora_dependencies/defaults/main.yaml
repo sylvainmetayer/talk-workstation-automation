@@ -1,0 +1,43 @@
+---
+fedora_dependencies_autoremove: false
+
+fedora_dependencies_disable_selinux: false
+
+fedora_dependencies_repositories:
+  - name: code
+    description: Visual Studio Code repo
+    file: vscode
+    url: https://packages.microsoft.com/yumrepos/vscode
+    gpg_url: https://packages.microsoft.com/keys/microsoft.asc
+    gpg_check: true
+
+fedora_dependencies_packages:
+  - git
+  - git-lfs
+  - unzip
+  - htop
+  - wget
+  - curl
+  - tmux
+  - vim
+  - NetworkManager-tui
+  - code
+  - seahorse
+  # Gnome related
+  - libappindicator
+  - python3-devel
+  - flatpak
+  - gnome-tweaks
+  - guake
+  - libgnome-keyring
+
+fedora_dependencies_remove_packages:
+  - gnome-maps
+  - gnome-documents
+  - rhythmbox
+
+fedora_dependencies_pip_packages:
+  - psutil>4.0
+
+fedora_dependencies_flatpak:
+  - https://flathub.org/repo/appstream/org.gnome.Extensions.flatpakref

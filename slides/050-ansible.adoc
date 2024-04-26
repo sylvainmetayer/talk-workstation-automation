@@ -2,28 +2,29 @@
 
 [.notes]
 ****
+Now, let's talk about the solution I've chose. Ansible is a python automation tool to provision and configure server. It can act on hundred of distant servers to apply configuration or, what will be interesting for us, one local workstation.
 
-Outil d'automatisation permettant provisionnement machines
+Ansible has a notion of roles and playbook we'll talk about in the next slides, so we can separate/regroup our tasks. It also have a huge community we can rely on to use existing roles to configure your docker installation as example.
 
-Peut déployer sur parc de machine distant ou une seule machine locale
-
-roles/playbooks
-
-Notion communauté +++ qui va permettre de faire assemblage de roles pour répondre au besoin ou création roles et publication
-
-Syntaxe YAML
+Whether we like it or hate it, it is easy to read, using a YAML syntax.
 ****
 
-=== How to use it ?
+=== How to use it?
 
 image::tell_me_more.gif[alt='Tell me more',width=80%]
+
+
+[.notes]
+****
+So I've told about the solution I've chosen. But what about how to use it ? We'll see the structure of an Ansible playbooks/roles and how I use it to provision my workstation.
+****
 
 === Structure
 
 [%linenums,text]
 ----
 ├── playbooks
-│   ├── demo
+│   ├── personal
 │   ├── work
 │   ├── ├── main.yaml
 ├── roles
@@ -35,6 +36,13 @@ image::tell_me_more.gif[alt='Tell me more',width=80%]
 │   └── [...]
 ----
 
+[.notes]
+****
+First, if we look at this filetree, we can see that playbook are organized in various folders. Roles folder contains different local roles, to achieve related tasks, such as anything concerning my git configuration (key signing, global configuration...) or install the jetbrains toolbox.
+
+Then we can find the playbook directory that contains one folder per workstation, and each playbook include a combinaison of local roles and community roles, that once put together, ensure my workstation is up to date.
+
+****
 === Playbook
 
 [%linenums,yaml]
@@ -53,7 +61,14 @@ include::../code/public_data.txt[]
 
 [.notes]
 ****
-task / role communauté / role custom
+Now, what concretely a playbook look like ? It is a YAML file, that run on a host or a set of hosts. In my case, I only want to configure my local workstation, so I run it on localhost.
+
+Then we have a array of 'tasks' key that contains different tasks. A tasks should always be named after what it does, and call a module, in this example the "debug" module with optional attributes depending on the called module. Here, we can see that I call my debug module with a msg attribute.
+
+We then see an array of roles, that can either come from a local role, such as my git_config we've seen before, a from the community, such as the docker role. This means that you could share your own role to perform a dedicated task or set of tasks and share it with the community
+
+The become flag here is to perform superuser related tasks.
+
 ****
 
 === Usage
@@ -71,11 +86,18 @@ roles:
     version: 6.1.0
 ----
 
+[.notes]
+****
+Now let's see how to apply this configuration on my workstation. First, we'll need to install the Python dependencies. Since Python is wildly available, on macOS and Linux, it should be available out of the box and you can easily install it on Windows too. We can see on the requirements.txt that there is only dependency, ansible itself.
+
+Then we can install the community related roles stored on ansible galaxy. To do so, we can declare these in a requirements.yml file that contains an array of roles and their associated versions, here the 6.1 version for docker.
+****
+
 === Usage
 
 [%linenums,bash]
 ----
-$ ansible-playbook playbooks/demo/main.yaml -K
+$ ansible-playbook playbooks/personal/main.yaml -K
 BECOME password:
 ----
 
@@ -97,8 +119,12 @@ Playbook run took 0 days, 0 hours, 0 minutes, 1 seconds
 
 [.notes]
 ****
-!!!! idempotent !!!!!!
-OK vs changed
+Our dependencies are installed, we are ready to go and can run ansible to configure our workstation and ensure to keep it up to date !
+
+Ansible offer an ansible-playbook command to run a playbook, with the playbook name as parameter. The flag - (dash) K is used to provide the superuser password to perform superuser tasks when needed.
+
+If we now look at the output ansible provide us, we can see it performs two tasks, but only one changed. Ansible is idempotent, which means it won't retry a task if it does not need modification. In this example, the Git config file already exist so Ansible did nothing. If your file is already configured as it should, ansible will do nothing and just tells you everything is OK and move on to the next task. This mean that, in theory, if you replay the same ansible-playbook command twice, the second time, no modification should occur.
+
 ****
 
 === Software installation
@@ -123,14 +149,26 @@ packages_to_install:
 ----
 
 [%linenums,yaml]
-.playbooks/demo/main.yaml
+.playbooks/personal/main.yaml
 ----
 - hosts: localhost
   roles:
     - role: commons
       vars:
-        packages_to_install: [vim]
+        packages_to_install: [vim, firefox]
 ----
+
+[.notes]
+****
+Now, let's see a few ansible module that can come in handy to configure our workstation.
+
+The first one is the "package" module to install software. We give to this module a list of desired software, and ansible will ensure these package are installed on this workstation. Obviously, this requires administrator privileges. One interesting argument we can give to this module is the "state". By default, it ensure that software is present on the workstation, but we can also define a task where we want to ensure that software is absent. This can be useful if you want to uninstall default software that you don't use.
+
+You can use variable to install different software on your personal and professional workstation. To do so, one way is to override the variable value, here "package_to_install", defined in the role folder.
+
+Let's assume that I need vscode, firefox and vim in my professional workstation. I don't need to override its value and will use the default one. However, on my personal workstation, I don't need vscode and will therefore override the variable value in my personal playbook to only install firefox and vim
+
+****
 
 === Symlink
 
@@ -162,7 +200,11 @@ roles/symlink
 
 [.notes]
 ****
-Réplique comportement stow
+This role reproduce the behavior of stow by creating symlink of a set of files on my home directory. We can see that I have a symlink role that contains a folder named files, where I store all my dotfiles configuration.
+
+I then have a tasks that will loop over these files, and foreach one, will call the file module with a state attribute value of link, to create a symlink.
+
+I can now edit my dotfiles as usual since it is symlinked, and just have to review changes in my git repository, commit and push them.
 ****
 
 === Templating
@@ -191,9 +233,9 @@ Réplique comportement stow
 
 [.notes]
 ****
-- variabiliser
-- ansible utilise jinja2 comme moteur de template
-- Dire que possible si besoin de boucles à partir de variables, mais ne pas présenter et renvoyer vers la documentation
+Sadly, symlink is not always an option, you may have some files that requires dedicated configuration to be functional. A classic example is my gitconfig file, where I have my name/email that is different in my professional and personal workstation. Thankfully, Ansible offers a templating system with loop, variables and many others options, using Jinja2 as template engine, so we can use it to template our file with custom values.
+
+You can look into the ansible documentation to deep dive into the possibility this module offers.
 ****
 
 === Secrets
@@ -209,8 +251,9 @@ Réplique comportement stow
 
 [.notes]
 ****
-ansible transparent sur usage vault, va utiliser password indiqué.
-Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
+Now, we sometime need to copy secrets in a dedicated location in our workstation, like a token value to authenticate against a private registry.
+
+If we look at this task, we could believe we put the plaintext version of this secret file into our git repository. However, we'll see that this is not the case.
 ****
 
 === Secrets
@@ -222,8 +265,7 @@ include::../code/secret_data.txt[]
 
 [.notes]
 ****
-speaker: ansible transparent sur usage vault, va utiliser password indiqué.
-Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
+As we can see, we only stored an encrypted version of our secret in the git repo and ansible transparently decrypted the secret when needed. This is done with a dedicated ansible tool : ansible-vault. Now we'll see how to use it with our playbook
 ****
 
 === Secrets
@@ -234,29 +276,35 @@ ansible-vault create secret_data.txt
 $ ansible-vault view secret_data.txt
 Vault password:
 include::../code/public_data.txt[]
-$ ansible-playbook playbooks/demo/main.yaml --ask-vault-pass
+$ ansible-playbook playbooks/work/main.yaml --ask-vault-pass
 ----
 
 [.notes]
 ****
-ansible transparent sur usage vault, va utiliser password indiqué.
-Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
+First, we need to create a vault where we'll store our secret. It can be sensitive variable or full encrypted configuration files. Ansible-vault will ask for a password to symmetrically encrypt our file with this password. To decrypt it, we can use the view option of ansible vault.
 
-mot de passe =
+To use it in a playbook, we need to provide the "--ask-vault-pass" which will ask for the vault password at startup, and ansible will internally decrypt our file when needed with this password.
+
+For those wondering, the password is :
 include::../code/password_file[]
 ****
 
-=== Many workstation ?
+=== Many workstation?
 
 [%linenums,text]
 ----
-├── demo
+├── personal
 │   ├── main.yaml
 └── work
     └── main.yaml
 ----
 
-=== What else ? ☕
+[.notes]
+****
+As we saw before, a playbook is a combination of roles and tasks with custom variable. Therefore, to manage multiple workstation, we just have to create a new playbook and use needed roles and/or override variable values.
+****
+
+=== What else? ☕
 
 image::battery_off.png[alt='Indicateur batterie off']
 
@@ -276,9 +324,17 @@ image::battery_on.png[alt='Indicateur batterie on']
 Windows (regedit) : link:https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html[win_regedit_module]
 --
 
+[.notes]
+****
+Before closing this part, I'd like to give you another example of what you can do. I personally like to know the percentage value of my battery, however, by default with gnome, this looks like this. However, we can use dconf editor to edit the value of this parameter and toggle the value. This is also possible with ansible, as pointed by this task where we update a key to display battery percentage.
+
+Windows users can also play with regedit values by using the dedicated module, see the docs here.
+
+****
+
 === Demo
 
-video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
+video::personal.mp4[width=1000,opts="autoplay,loop,muted"]
 
 === Pros and Cons
 
@@ -301,12 +357,7 @@ video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
 
 [.notes]
 ****
-- Few prerequisites
-- Vous utilisez déjà ansible pour votre configuration de machines ?
-- Roles / Playbooks (séparer PC pro/perso)
-- Syntaxe YAML
-
-Cependant, si pas d'usage d'ansible autre que pour un seul poste, peu être "lourd" à mettre en place
+To put it in a nutshell, ansible has my back on my needs, with a few prerequisites. I'm able to manage my dotfiles and installed software, in an easy way with YAML syntax. I can also review changes quite easily and adding a new software or configuration file doesn't take much time. I'm able to manage my personal and pro workstation with dedicated playbooks, reusing roles for most of my needs. I'm also able to handle secret with vault to store my secrets safely.
 
 ****
 
@@ -315,3 +366,8 @@ Cependant, si pas d'usage d'ansible autre que pour un seul poste, peu être "lou
 https://docs.ansible.com/
 
 https://galaxy.ansible.com/
+
+[.notes]
+****
+If you need to do further configuration, I invite you to look at the documentation and existing roles in the Ansible galaxy community. There is probably a role that already fit your needs, and you can reuse / contribute to it without having to reinvent the wheel.
+****

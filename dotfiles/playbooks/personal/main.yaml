@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+
+  pre_tasks:
+    - name: "Include locals vars"
+      include_vars:
+        file: "locals.yaml"
+      tags: always
+
+  roles:
+    # - role: geerlingguy.docker
+    #   become: true
+    - role: fedora_dependencies
+      become: true
+    - role: donhector.workstation.asdf
+    - role: hostname
+      become: true
+    - role: git_config
+    # - role: jetbrains_toolbox
+    # - role: gnome
+    - role: commons
+
+  post_tasks:
+    - name: "Copy secret file"
+      copy:
+        src: "secret_data.txt"
+        dest: ~/secret_data.txt
+        force: false
+        group: "{{ ansible_user_gid }}"
+        owner: "{{ ansible_user_uid }}"
+        mode: "0600"

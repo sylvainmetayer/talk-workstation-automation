@@ -1,9 +1,13 @@
-== Dotfiles, what are those ?
+== What are dotfiles?
 
 [quote,https://wiki.archlinux.org/title/Dotfiles]
 User-specific application configuration is traditionally
-stored in so called dotfiles (files whose filename starts with a dot).
+stored in so called dotfiles (files with filenames starting with a dot).
 
+[.notes]
+****
+Dotfiles are text files containing the configuration of your software. This can be your git configuration, your SSH hosts. These files are usually stored in your home directory and starts with a dot, which explains the dotfiles' name.
+****
 
 == Example
 
@@ -22,9 +26,20 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 
 > Others : vimrc, gitconfig, ...
 
-== How to manage them ?
+[.notes]
+****
+Here you can see an example of .bashrc that export a custom environment variable. You may already have multiple dotfiles on your workstation, such as your vim configuration.
+****
+
+== How to manage them?
 
 https://dotfiles.github.io/
 
 https://github.com/webpro/awesome-dotfiles
 
+[.notes]
+****
+Now that we've seen what dotfiles are, we can see how to store them to ensure we can quickly recover if your workstation goes down.
+
+GitHub has a website where various ways to manage these dotfiles exists, and there is also an awesome-dotfiles repository which list others way. We'll see right now a few options and the one I've chosen.
+****

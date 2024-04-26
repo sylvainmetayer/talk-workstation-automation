@@ -1,6 +1,31 @@
+
+[.columns]
 == Homemade script
 
-Shell, Python, C, PHP... Come as you are, let's code !
+[.column]
+--
+Shell, Python, C, PHP... The choice is yours, let's code!
+--
+
+[.column.language_logo]
+--
+image::bash-logo.svg[]
+
+image::python-logo.svg[]
+
+--
+
+[.column.language_logo]
+--
+image::C-logo.svg[]
+
+image::PHP-logo.svg[]
+--
+
+[.notes]
+****
+This other method is one we can think of, since there's a majority of developers among us. Grab your favorite language and build your own tool !
+****
 
 === Pros and Cons
 
@@ -23,9 +48,7 @@ Shell, Python, C, PHP... Come as you are, let's code !
 
 [.notes]
 ****
-- Avantage On répond enfin au besoin !
-On choisit un langage qu'on aime !
-- Gestion de secret possible (dans un fichier de config par exemple)
-- Inconvénient : chronophage // Il faut installer les pré-requis au langage, le maintenir, selon le langage, pas garanti que l'on puisse tout faire.
-- Facile : selon comment vous l'avez conçu... :) ?
+The main advantage is that you can do everything you want, with your favorite language ! Since you're building your own solution, you'll be able to manage your dotfiles, your installed software through system APIs. You're already working with Git, so you'll be able to version control your code. Almost everyone had to manage password/secrets in one of your application, so you'll know how to hash these secret and store them securely. What about pro/personal workstation ? Since you have this constraint when building your tool, I'm confident you'll come up with something.
+
+However, how much time will you spend to craft this tool to fit every one of your needs ? I can become time-consuming, and you may spend more time fixing your tool than configuring your workstation. It can be a fun side project though if you're looking for a new challenge, but that is not what I was looking for.
 ****
