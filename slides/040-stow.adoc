@@ -8,9 +8,9 @@ GNU Stow is a symlink farm manager which takes distinct sets of software and/or 
 [%autowidth.stretch,cols="1,1"]
 |===
 |Goal | State
-|Manage my configuration files
+|Manage configuration files
 |✅
-|Manage my installed software
+|Manage installed software
 |❌
 |Version Control
 |✅

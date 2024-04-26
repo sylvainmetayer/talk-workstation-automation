@@ -1,4 +1,4 @@
-== Dotfiles, what's this ?
+== Dotfiles, what are those ?
 
 [quote,https://wiki.archlinux.org/title/Dotfiles]
 User-specific application configuration is traditionally
@@ -22,7 +22,7 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 
 > Others : vimrc, gitconfig, ...
 
-== How to do this ?
+== How to manage them ?
 
 https://dotfiles.github.io/
 

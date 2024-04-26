@@ -256,7 +256,7 @@ include::../code/password_file[]
     └── main.yaml
 ----
 
-=== What else ?
+=== What else ? ☕
 
 image::battery_off.png[alt='Indicateur batterie off']
 
@@ -285,9 +285,9 @@ video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
 [%autowidth.stretch,cols="1,1"]
 |===
 |Goal | State
-|Manage my configuration files
+|Manage configuration files
 |✅
-|Manage my installed software
+|Manage installed software
 |✅
 |Version Control
 |✅
@@ -301,7 +301,7 @@ video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
 
 [.notes]
 ****
-- Peu de prérequis
+- Few prerequisites
 - Vous utilisez déjà ansible pour votre configuration de machines ?
 - Roles / Playbooks (séparer PC pro/perso)
 - Syntaxe YAML

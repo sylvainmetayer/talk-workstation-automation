@@ -5,9 +5,9 @@ include::001-presentation.adoc[]
 [height=50.stretch,cols="1,1"]
 |===
 |Goal | State
-|Manage my configuration files
+|Manage configuration files
 |?
-|Manage my installed software
+|Manage installed software
 |?
 |Version Control
 |?
