@@ -5,9 +5,9 @@ GNU Stow is a symlink farm manager which takes distinct sets of software and/or 
 
 [.notes]
 ****
-Now let's take a look at a dedicated tool to manage your dotfiles. Stow is a Linux tool that does one thing, and as per the Unix philosophy, it does this thing well.
+Now let's take a look at a dedicated tool to manage our dotfiles. Stow is a Linux tool that does one thing, and as per the Unix philosophy, it does this thing well.
 
-Stow will take a folder with an arborescence of files, and will replicate it to another directory of your filesystem (your home directory) with symlinks. So this means you can store all your dotfiles in a dedicated directory, version control this folder with Git, and with one command, you'll sync your dotfiles on your workstation!
+Stow will take a folder with an arborescence of files, and will replicate it to another directory of your filesystem (your home directory) with symlinks. So this means you can store all your dotfiles in a dedicated directory, version control this folder with Git, and with one command, it will sync your dotfiles on your workstation!
 ****
 
 === Pros and Cons

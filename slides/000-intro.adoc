@@ -21,17 +21,17 @@ include::001-presentation.adoc[]
 
 [.notes]
 ****
-I have a few criteria to choose a solution and have established this table to see if it fit my needs.
+I had some criteria for choosing a solution, so I made the table that you can see here, to know if it fit my needs.
 
 Manage dotfiles, to keep the configuration of my installed software or my custom bash prompt, we'll talk about it later.
 
-Manage installed software, so I don't have to remember what is installed on a fresh install and can start working with my habitual tools.
+Manage installed software was also part of my requirements because I  didn't wanted having to remember what is installed on a fresh install and can start working with my habitual tools.
 
 Version control so I can keep track of changes to my configuration, as you'd do with your code.
 
 Maintainable : I don't want to spend hours to configure/maintain something... To configure my workstation so I can work.
 
-Multiple workstation : I share some configuration/needs between my personal and professional workstation, and don't want to have to start over or duplicate all my configuration
+Multiple workstation : I'm working on multiple workstations, so I had to take that as requirements too and share some configuration between my personal and professional workstation, and because I don't want to have to start over or duplicate all my configuration.
 
 Secrets : Like everyone in this room, I have various secrets, SSH keys, password. I want a safe way to back up these without exposing these to the world.
 

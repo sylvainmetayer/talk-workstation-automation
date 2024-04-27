@@ -2,11 +2,11 @@
 
 [.notes]
 ****
-Now, let's talk about the solution I've chose. Ansible is a python automation tool to provision and configure server. It can act on hundred of distant servers to apply configuration or, what will be interesting for us, one local workstation.
+Now, let's discuss the solution I've chosen. Ansible is a python automation tool to provision and configure server. It can act on hundred of distant servers to apply configuration or, what will be interesting for us, one local workstation.
 
-Ansible has a notion of roles and playbook we'll talk about in the next slides, so we can separate/regroup our tasks. It also have a huge community we can rely on to use existing roles to configure your docker installation as example.
+Ansible has a notion of roles and playbook we'll talk about in the next slides, so we can separate/regroup our tasks. It also has a huge community we can rely on to use existing roles to configure your docker installation as example.
 
-Whether we like it or hate it, it is easy to read, using a YAML syntax.
+Whether you like it or hate it, it is easy to read, using a YAML syntax.
 ****
 
 === How to use it?
@@ -334,7 +334,7 @@ Windows users can also play with regedit values by using the dedicated module, s
 
 === Demo
 
-video::personal.mp4[width=1000,opts="autoplay,loop,muted"]
+video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
 
 === Pros and Cons
 
@@ -357,7 +357,7 @@ video::personal.mp4[width=1000,opts="autoplay,loop,muted"]
 
 [.notes]
 ****
-To put it in a nutshell, ansible has my back on my needs, with a few prerequisites. I'm able to manage my dotfiles and installed software, in an easy way with YAML syntax. I can also review changes quite easily and adding a new software or configuration file doesn't take much time. I'm able to manage my personal and pro workstation with dedicated playbooks, reusing roles for most of my needs. I'm also able to handle secret with vault to store my secrets safely.
+To put it in a nutshell, ansible has my back on all of my needs, with a few prerequisites. I'm able to manage my dotfiles and installed software, in an easy way with YAML syntax. I can also review changes quite easily and adding a new software or configuration file doesn't take much time. I'm able to manage my personal and pro workstation with dedicated playbooks, reusing roles for most of my needs. I'm also able to handle secret with vault to store my secrets safely.
 
 ****
 
