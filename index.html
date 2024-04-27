@@ -714,7 +714,7 @@ Reveal.initialize({
   // present.  If this is set to a nonzero value, the pacing
   // timer will work out the time available for each slide,
   // instead of using the defaultTiming value
-  totalTime: 30*60,
+  totalTime: 15*60,
   // Specify the minimum amount of time you want to allot to
   // each slide, if using the totalTime calculation method.  If
   // the automated time allocation causes slide pacing to fall
@@ -760,8 +760,8 @@ Reveal.initialize({
   // The "normal" size of the presentation, aspect ratio will be preserved
   // when the presentation is scaled to fit different resolutions. Can be
   // specified using percentage units.
-  width: 1200,
-  height: 700,
+  width: 1280,
+  height: 720,
 
   // Factor of the display size that should remain empty around the content
   margin: 0.1,
@@ -837,13 +837,13 @@ function toArray(o) {
 }
 
 Reveal.addEventListener('slidechanged', function () {
-  layoutSlideContents(1200, 700)
+  layoutSlideContents(1280, 720)
 });
 Reveal.addEventListener('ready', function () {
-  layoutSlideContents(1200, 700)
+  layoutSlideContents(1280, 720)
 });
 Reveal.addEventListener('resize', function () {
-  layoutSlideContents(1200, 700)
+  layoutSlideContents(1280, 720)
 });</script><link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css"/>
 <script src="js/highlight.min.js"></script>
 
