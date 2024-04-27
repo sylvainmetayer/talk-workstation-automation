@@ -37,7 +37,7 @@ Welcome to this presentation where we'll talk about how we can automate our work
 
 include::slides/000-intro.adoc[]
 include::slides/010-dotfiles.adoc[]
-include::slides/020-copier-coller.adoc[]
+// include::slides/020-copier-coller.adoc[]
 include::slides/030-script.adoc[]
 include::slides/040-stow.adoc[]
 include::slides/050-ansible.adoc[]

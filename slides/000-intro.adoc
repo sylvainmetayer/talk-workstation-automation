@@ -29,7 +29,7 @@ Manage installed software was also part of my requirements because I  didn't wan
 
 Version control so I can keep track of changes to my configuration, as you'd do with your code.
 
-Maintainable : I don't want to spend hours to configure/maintain something... To configure my workstation so I can work.
+Easy to maintain : I don't want to spend hours to configure/maintain something... To configure my workstation so I can work.
 
 Multiple workstation : I'm working on multiple workstations, so I had to take that as requirements too and share some configuration between my personal and professional workstation, and because I don't want to have to start over or duplicate all my configuration.
 

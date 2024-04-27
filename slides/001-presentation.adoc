@@ -29,5 +29,5 @@ French speaker, located in Bordeaux, working at Onepoint as Tech Lead.
 
 It's the first time that I'm doing an English version of this talk and my first English talk, please be kind 😃
 
-My day-to-day tasks involve automation of various systems, working with containers and orchestrator such as Docker/Kubernetes. As I was automating my tasks I decided to give it a try to do it on my own workstation
+My day-to-day tasks involve automation of various systems, working with Docker and/or Kubernetes. As I was automating my tasks I decided to give it a try to do it on my own workstation
 ****

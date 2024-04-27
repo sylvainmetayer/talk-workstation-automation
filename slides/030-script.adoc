@@ -23,7 +23,7 @@ image::PHP-logo.svg[]
 
 [.notes]
 ****
-This other method is one we can think of, since there's a majority of developers among us. Grab your favorite language, a coffee or some tea and build your own tool !
+This method is one we can think of, since there's a majority of developers among us. Grab your favorite language, a coffee or some tea and build your own tool !
 ****
 
 === Pros and Cons

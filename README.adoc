@@ -11,4 +11,9 @@ Slides available on https://workstation-automation.talks.sylvain.dev[Github Page
 docker container run --rm -v $(pwd):/documents -w /documents asciidoctor/docker-asciidoctor:1.67 asciidoctor-revealjs -r asciidoctor-diagram index.adoc
 
 python3 -m http.server # open localhost:8000
+
+# Collect notes
+
+./notes.py && sed -i '/^[[:space:]]*$/d' notes.txt
+# https://www.naturalreaders.com/online/
 ----

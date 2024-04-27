@@ -4,7 +4,7 @@
 ****
 Now, let's discuss the solution I've chosen. Ansible is a python automation tool to provision and configure server. It can act on hundred of distant servers to apply configuration or, what will be interesting for us, one local workstation.
 
-Ansible has a notion of roles and playbook we'll talk about in the next slides, so we can separate/regroup our tasks. It also has a huge community we can rely on to use existing roles to configure your docker installation as example.
+Ansible has a notion of roles and playbook we'll talk about in the next slides. It also has a huge community we can rely on.
 
 Whether you like it or hate it, it is easy to read, using a YAML syntax.
 ****
@@ -16,7 +16,7 @@ image::tell_me_more.gif[alt='Tell me more',width=80%]
 
 [.notes]
 ****
-So I've told about the solution I've chosen. But what about how to use it ? We'll see the structure of an Ansible playbooks/roles and how I use it to provision my workstation.
+So I've told about the solution I've chosen. But how to use it ? We'll see the structure of an Ansible playbooks/roles and how I use it to provision my workstation.
 ****
 
 === Structure
@@ -38,9 +38,9 @@ So I've told about the solution I've chosen. But what about how to use it ? We'l
 
 [.notes]
 ****
-First, if we look at this filetree, we can see that playbook are organized in various folders. Roles folder contains different local roles, to achieve related tasks, such as anything concerning my git configuration (key signing, global configuration...) or install the jetbrains toolbox.
+First, if we look at this filetree, we can see that the roles folder contains different local roles, to achieve related tasks, such as anything concerning my git configuration (key signing, global configuration...) or install the jetbrains toolbox.
 
-Then we can find the playbook directory that contains one folder per workstation, and each playbook include a combinaison of local roles and community roles, that once put together, ensure my workstation is up to date.
+Then we can find the playbook directory that contains one folder per workstation
 
 ****
 === Playbook
@@ -61,11 +61,11 @@ include::../code/public_data.txt[]
 
 [.notes]
 ****
-Now, what concretely a playbook look like ? It is a YAML file, that run on a host or a set of hosts. In my case, I only want to configure my local workstation, so I run it on localhost.
+What is included in a playbook ? It runs on a host , here localhost.
 
-Then we have a array of 'tasks' key that contains different tasks. A tasks should always be named after what it does, and call a module, in this example the "debug" module with optional attributes depending on the called module. Here, we can see that I call my debug module with a msg attribute.
+We can find an array of 'tasks' that contains different tasks. A task should always be named after what it does, and call a module, in this example the "debug" module with optional attributes depending on the called module. Here, we can see that I call my debug module with a msg attribute.
 
-We then see an array of roles, that can either come from a local role, such as my git_config we've seen before, a from the community, such as the docker role. This means that you could share your own role to perform a dedicated task or set of tasks and share it with the community
+We then see an array of roles, that can either come from a local role, such as my git_config we've seen before, a from the ansible community, such as the docker role.
 
 The become flag here is to perform superuser related tasks.
 
@@ -88,9 +88,9 @@ roles:
 
 [.notes]
 ****
-Now let's see how to apply this configuration on my workstation. First, we'll need to install the Python dependencies. Since Python is wildly available, on macOS and Linux, it should be available out of the box and you can easily install it on Windows too. We can see on the requirements.txt that there is only dependency, ansible itself.
+Let's see how to apply this configuration on my workstation. First, we'll need to install the Python dependencies.
 
-Then we can install the community related roles stored on ansible galaxy. To do so, we can declare these in a requirements.yml file that contains an array of roles and their associated versions, here the 6.1 version for docker.
+Then we can install the community related roles stored on ansible galaxy with the ansible-galaxy command provided by the ansible package. To do so, we can declare these in a requirements.yml file that contains an array of roles and their associated versions, here the 6.1 version for docker.
 ****
 
 === Usage
@@ -119,7 +119,7 @@ Playbook run took 0 days, 0 hours, 0 minutes, 1 seconds
 
 [.notes]
 ****
-Our dependencies are installed, we are ready to go and can run ansible to configure our workstation and ensure to keep it up to date !
+Our dependencies are installed, we are ready to go and can run ansible to configure our laptop.
 
 Ansible offer an ansible-playbook command to run a playbook, with the playbook name as parameter. The flag - (dash) K is used to provide the superuser password to perform superuser tasks when needed.
 
@@ -162,9 +162,11 @@ packages_to_install:
 ****
 Now, let's see a few ansible module that can come in handy to configure our workstation.
 
-The first one is the "package" module to install software. We give to this module a list of desired software, and ansible will ensure these package are installed on this workstation. Obviously, this requires administrator privileges. One interesting argument we can give to this module is the "state". By default, it ensure that software is present on the workstation, but we can also define a task where we want to ensure that software is absent. This can be useful if you want to uninstall default software that you don't use.
+The first one is the "package" module to install software. We give to this module a list of desired software, using a variable, here containing vim, firefox and vscode by default, and ansible will ensure these package are installed on this workstation. Obviously, this requires administrator privileges.
 
-You can use variable to install different software on your personal and professional workstation. To do so, one way is to override the variable value, here "package_to_install", defined in the role folder.
+One interesting argument we can give to this module is the "state". By default, it ensures that software is present on the workstation, but we can also define a task where we want to ensure that software is absent. This can be useful if you want to uninstall default software that you don't use.
+
+You can use variable to install different software on your personal and professional workstation. To do so, one way is to override the "package_to_install", defined in the role folder.
 
 Let's assume that I need vscode, firefox and vim in my professional workstation. I don't need to override its value and will use the default one. However, on my personal workstation, I don't need vscode and will therefore override the variable value in my personal playbook to only install firefox and vim
 
@@ -281,7 +283,7 @@ $ ansible-playbook playbooks/work/main.yaml --ask-vault-pass
 
 [.notes]
 ****
-First, we need to create a vault where we'll store our secret. It can be sensitive variable or full encrypted configuration files. Ansible-vault will ask for a password to symmetrically encrypt our file with this password. To decrypt it, we can use the view option of ansible vault.
+First, we need to create a vault where we'll store our secret. Ansible-vault will ask for a password, and you'll have to remember it. To decrypt it, we can use the view option of ansible vault.
 
 To use it in a playbook, we need to provide the "--ask-vault-pass" which will ask for the vault password at startup, and ansible will internally decrypt our file when needed with this password.
 
@@ -331,10 +333,6 @@ Before closing this part, I'd like to give you another example of what you can d
 Windows users can also play with regedit values by using the dedicated module, see the docs here.
 
 ****
-
-=== Demo
-
-video::demo.mp4[width=1000,opts="autoplay,loop,muted"]
 
 === Pros and Cons
 
