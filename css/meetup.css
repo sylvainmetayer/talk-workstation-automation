@@ -41,14 +41,16 @@
 }
 
 body::after {
-    content: url("../images/devoxx_united_kingdom_logo.png");
+    content: "";
+    background-image: url('../images/devoxx_united_kingdom_logo.png');
+    background-size: cover;
     position: fixed;
     top: 0;
     opacity: 1;
     background-color: white;
     border: 1px solid black;
     width: 20%;
-    height: 17%;
+    height: 15%;
 }
 
 .reveal section h1 {
@@ -144,4 +146,5 @@ img {
 
 .language_logo img {
     width: 45%;
+    height: ;
 }
