@@ -10,14 +10,15 @@
 :revealjs_theme: white
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
-:revealjs_width: 1200
+:revealjs_width: 1280
+:revealjs_height: 720
 :title-slide-background-image: devoxxuk_intro.jpg
 :title-slide-background-size: cover
 :title-slide-filter: blur(4px)
 :stylesdir: css
 :customcss: css/meetup.css
 :imagesdir: images
-:revealjs_totalTime: 30*60
+:revealjs_totalTime: 15*60
 :revealjs_defaultTiming: 60
 :tip-caption: 💡
 :important-caption: 📌
