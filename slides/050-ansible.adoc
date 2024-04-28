@@ -9,15 +9,15 @@ Ansible has a notion of roles and playbook we'll talk about in the next slides. 
 Whether you like it or hate it, it is easy to read, using a YAML syntax.
 ****
 
-=== How to use it?
-
-image::tell_me_more.gif[alt='Tell me more',width=80%]
-
-
-[.notes]
-****
-So I've told about the solution I've chosen. But how to use it ? We'll see the structure of an Ansible playbooks/roles and how I use it to provision my workstation.
-****
+// === How to use it?
+//
+// image::tell_me_more.gif[alt='Tell me more',width=80%]
+//
+//
+// [.notes]
+// ****
+// So I've told about the solution I've chosen. But how to use it ? We'll see the structure of an Ansible playbooks/roles and how I use it to provision my workstation.
+// ****
 
 === Structure
 
@@ -306,33 +306,33 @@ include::../code/password_file[]
 As we saw before, a playbook is a combination of roles and tasks with custom variable. Therefore, to manage multiple workstation, we just have to create a new playbook and use needed roles and/or override variable values.
 ****
 
-=== What else? ☕
-
-image::battery_off.png[alt='Indicateur batterie off']
-
-[.fragment]
---
-[%linenums,yaml]
-----
-- name: Display battery percentage
-  dconf:
-    key: "/org/gnome/desktop/interface/show-battery-percentage"
-    value: "true"
-    state: present
-----
-
-image::battery_on.png[alt='Indicateur batterie on']
-
-Windows (regedit) : link:https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html[win_regedit_module]
---
-
-[.notes]
-****
-Before closing this part, I'd like to give you another example of what you can do. I personally like to know the percentage value of my battery, however, by default with gnome, this looks like this. However, we can use dconf editor to edit the value of this parameter and toggle the value. This is also possible with ansible, as pointed by this task where we update a key to display battery percentage.
-
-Windows users can also play with regedit values by using the dedicated module, see the docs here.
-
-****
+// === What else? ☕
+//
+// image::battery_off.png[alt='Indicateur batterie off']
+//
+// [.fragment]
+// --
+// [%linenums,yaml]
+// ----
+// - name: Display battery percentage
+//   dconf:
+//     key: "/org/gnome/desktop/interface/show-battery-percentage"
+//     value: "true"
+//     state: present
+// ----
+//
+// image::battery_on.png[alt='Indicateur batterie on']
+//
+// Windows (regedit) : link:https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_regedit_module.html[win_regedit_module]
+// --
+//
+// [.notes]
+// ****
+// Before closing this part, I'd like to give you another example of what you can do. I personally like to know the percentage value of my battery, however, by default with gnome, this looks like this. However, we can use dconf editor to edit the value of this parameter and toggle the value. This is also possible with ansible, as pointed by this task where we update a key to display battery percentage.
+//
+// Windows users can also play with regedit values by using the dedicated module, see the docs here.
+//
+// ****
 
 === Pros and Cons
 

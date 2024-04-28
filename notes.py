@@ -30,14 +30,14 @@ for glob in [
     input_file = open(glob, 'r')
     # fh.write(f"################# {glob}\n")
     for line in input_file:
-        if delimitor in line and delimitor_found is True:
+        if line.startswith(delimitor) and delimitor_found is True:
             # End collecting notes for this section
             fh.write(buffer)
             buffer = ""
             delimitor_found = False
             continue
 
-        if delimitor in line:
+        if line.startswith(delimitor):
             # Start collecting notes
             delimitor_found = True
             continue
