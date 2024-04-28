@@ -164,8 +164,6 @@ Now, let's see a few ansible module that can come in handy to configure our work
 
 The first one is the "package" module to install software. We give to this module a list of desired software, using a variable, here containing vim, firefox and vscode by default, and ansible will ensure these package are installed on this workstation. Obviously, this requires administrator privileges.
 
-One interesting argument we can give to this module is the "state". By default, it ensures that software is present on the workstation, but we can also define a task where we want to ensure that software is absent. This can be useful if you want to uninstall default software that you don't use.
-
 You can use variable to install different software on your personal and professional workstation. To do so, one way is to override the "package_to_install", defined in the role folder.
 
 Let's assume that I need vscode, firefox and vim in my professional workstation. I don't need to override its value and will use the default one. However, on my personal workstation, I don't need vscode and will therefore override the variable value in my personal playbook to only install firefox and vim
