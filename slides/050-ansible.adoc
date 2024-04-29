@@ -2,9 +2,9 @@
 
 [.notes]
 ****
-Now, let's discuss the solution I've chosen. Ansible is a python automation tool to provision and configure server. It can act on hundred of distant servers to apply configuration or, what will be interesting for us, one local workstation.
+Now, let's discuss the solution I've chosen. Ansible is a python automation tool to provision and configure servers. It can be used to apply configuration on hundreds of distant servers  or, what will be interesting for us, one local workstation.
 
-Ansible has a notion of roles and playbook we'll talk about in the next slides. It also has a huge community we can rely on.
+Ansible has a notion of roles and playbooks, which we'll talk about in the next slides. It also has a huge community we can rely on.
 
 Whether you like it or hate it, it is easy to read, using a YAML syntax.
 ****
@@ -38,7 +38,7 @@ Whether you like it or hate it, it is easy to read, using a YAML syntax.
 
 [.notes]
 ****
-First, if we look at this filetree, we can see that the roles folder contains different local roles, to achieve related tasks, such as anything concerning my git configuration (key signing, global configuration...) or install the jetbrains toolbox.
+First, if we look at this filetree, we can see that the roles folder contains different local roles, to achieve related tasks, such as anything concerning my git configuration (key signing, global configuration...) or installing the jetbrains toolbox.
 
 Then we can find the playbook directory that contains one folder per workstation
 
@@ -61,11 +61,11 @@ include::../code/public_data.txt[]
 
 [.notes]
 ****
-What is included in a playbook ? It runs on a host , here localhost.
+What is included in a playbook ? It runs on a host , in this case - localhost.
 
-We can find an array of 'tasks' that contains different tasks. A task should always be named after what it does, and call a module, in this example the "debug" module with optional attributes depending on the called module. Here, we can see that I call my debug module with a msg attribute.
+We can find an array of 'tasks' that contains different tasks. A task should always be named after what it does, and call a module, in this example the "debug" module with optional attributes that depend on the module we're calling. Here, we can see that I call my debug module with a msg attribute.
 
-We then see an array of roles, that can either come from a local role, such as my git_config we've seen before, a from the ansible community, such as the docker role.
+We then see an array of roles, that can either come from a local role, such as my git_config that we've seen before, or from the ansible community, such as the docker role.
 
 The become flag here is to perform superuser related tasks.
 
@@ -121,9 +121,9 @@ Playbook run took 0 days, 0 hours, 0 minutes, 1 seconds
 ****
 Our dependencies are installed, we are ready to go and can run ansible to configure our laptop.
 
-Ansible offer an ansible-playbook command to run a playbook, with the playbook name as parameter. The flag - (dash) K is used to provide the superuser password to perform superuser tasks when needed.
+Ansible offers an ansible-playbook command to run a playbook, with the playbook name as parameter. The flag - (dash) K is used to provide the superuser password to perform superuser tasks when needed.
 
-If we now look at the output ansible provide us, we can see it performs two tasks, but only one changed. Ansible is idempotent, which means it won't retry a task if it does not need modification. In this example, the Git config file already exist so Ansible did nothing. If your file is already configured as it should, ansible will do nothing and just tells you everything is OK and move on to the next task. This mean that, in theory, if you replay the same ansible-playbook command twice, the second time, no modification should occur.
+If we now look at the output ansible provides us, we can see it performs two tasks, but only one changed. Ansible is idempotent, which means it won't retry a task if it does not need modification. In this example, the Git config file already exist so Ansible did nothing. If your file is already configured as it should, ansible will do nothing and just tell you everything is OK and move on to the next task. This means that, in theory, if you replay the same ansible-playbook command twice, the second time, no modification should occur.
 
 ****
 
@@ -160,13 +160,13 @@ packages_to_install:
 
 [.notes]
 ****
-Now, let's see a few ansible module that can come in handy to configure our workstation.
+Now, let's see a few ansible modules that can come in handy to configure our workstation.
 
-The first one is the "package" module to install software. We give to this module a list of desired software, using a variable, here containing vim, firefox and vscode by default, and ansible will ensure these package are installed on this workstation. Obviously, this requires administrator privileges.
+The first one is the "package" module to install software. We give the module a list of the software we want, using a variable, here containing vim, firefox and vscode by default, and ansible will ensure these package are installed on this workstation. Obviously, this requires administrator privileges.
 
-You can use variable to install different software on your personal and professional workstation. To do so, one way is to override the "package_to_install", defined in the role folder.
+You can use variables to install different software on your personal and professional workstation. To do so, one way is to override the "package_to_install", defined in the role folder.
 
-Let's assume that I need vscode, firefox and vim in my professional workstation. I don't need to override its value and will use the default one. However, on my personal workstation, I don't need vscode and will therefore override the variable value in my personal playbook to only install firefox and vim
+Let's assume that I need vscode, firefox and vim on my professional workstation. I don't need to override its value and will use the default one. However, on my personal workstation, I don't need vscode and will therefore override the variable value in my personal playbook to only install firefox and vim
 
 ****
 
@@ -200,11 +200,11 @@ roles/symlink
 
 [.notes]
 ****
-This role reproduce the behavior of stow by creating symlink of a set of files on my home directory. We can see that I have a symlink role that contains a folder named files, where I store all my dotfiles configuration.
+This role reproduces the behavior of stow by creating symlinks of a set of files in my home directory. We can see that I have a symlink role that contains a folder named files, where I store all my dotfiles configuration.
 
-I then have a tasks that will loop over these files, and foreach one, will call the file module with a state attribute value of link, to create a symlink.
+I then have a task that will loop over these files, and foreach one, will call the file module with a state attribute value of link, to create a symlink.
 
-I can now edit my dotfiles as usual since it is symlinked, and just have to review changes in my git repository, commit and push them.
+I can now edit my dotfiles as usual since they are symlinked, and just have to review changes in my git repository, commit and push them.
 ****
 
 === Templating
@@ -233,7 +233,7 @@ I can now edit my dotfiles as usual since it is symlinked, and just have to revi
 
 [.notes]
 ****
-Sadly, symlink is not always an option, you may have some files that requires dedicated configuration to be functional. A classic example is my gitconfig file, where I have my name/email that is different in my professional and personal workstation. Thankfully, Ansible offers a templating system with loop, variables and many others options, using Jinja2 as template engine, so we can use it to template our file with custom values.
+Sadly, symlinks are not always an option, you may have some files that require dedicated configuration to be functional. A classic example is my gitconfig file, where I have my name/email that is different on my professional and personal workstation. Thankfully, Ansible offers a templating system with loops, variables and many others options, using Jinja2 as template engine, so we can use it to template our file with custom values.
 
 You can look into the ansible documentation to deep dive into the possibility this module offers.
 ****
@@ -253,7 +253,7 @@ You can look into the ansible documentation to deep dive into the possibility th
 ****
 Now, we sometime need to copy secrets in a dedicated location in our workstation, like a token value to authenticate against a private registry.
 
-If we look at this task, we could believe we put the plaintext version of this secret file into our git repository. However, we'll see that this is not the case.
+If we look at this task, one could believe we put the plaintext version of this secret file into our git repository. However, we'll see that this is not the case.
 ****
 
 === Secrets
@@ -301,7 +301,7 @@ include::../code/password_file[]
 
 [.notes]
 ****
-As we saw before, a playbook is a combination of roles and tasks with custom variable. Therefore, to manage multiple workstation, we just have to create a new playbook and use needed roles and/or override variable values.
+As we saw before, a playbook is a combination of roles and tasks with custom variables. Therefore, to manage multiple workstations, we just have to create a new playbook and use needed roles and/or override variable values.
 ****
 
 // === What else? ☕
@@ -353,7 +353,7 @@ As we saw before, a playbook is a combination of roles and tasks with custom var
 
 [.notes]
 ****
-To put it in a nutshell, ansible has my back on all of my needs, with a few prerequisites. I'm able to manage my dotfiles and installed software, in an easy way with YAML syntax. I can also review changes quite easily and adding a new software or configuration file doesn't take much time. I'm able to manage my personal and pro workstation with dedicated playbooks, reusing roles for most of my needs. I'm also able to handle secret with vault to store my secrets safely.
+To put it in a nutshell, ansible has my back on all of my needs, with very few prerequisites. I'm able to manage my dotfiles and installed software, in an easy way with YAML syntax. I can also review changes quite easily and adding a new software or configuration file doesn't take much time. I'm able to manage my personal and professional workstation with dedicated playbooks, reusing roles for most of my needs. I'm also able to handle secrets with the vault system to store my secrets safely.
 
 ****
 
@@ -365,5 +365,5 @@ https://galaxy.ansible.com/
 
 [.notes]
 ****
-If you need to do further configuration, I invite you to look at the documentation and existing roles in the Ansible galaxy community. There is probably a role that already fit your needs, and you can reuse / contribute to it without having to reinvent the wheel.
+If you need to do further configuration, I invite you to look at the documentation and existing roles in the Ansible galaxy community. There is probably a role that already fits your needs, and you can reuse / contribute to it without having to reinvent the wheel.
 ****

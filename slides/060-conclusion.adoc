@@ -7,11 +7,13 @@ https://github.com/sylvainmetayer/dotfiles
 
 [.notes]
 ****
-To end this presentation, I'd like to point that ansible is not a silver bullet.
-It is powerful, and you'll be able to do anything but come with a little learning curve.
-Less than building your own tool and you'll may reuse this skill in another mission but if you only have two or three config files to handle, there is no need to use ansible for this, you'll be fine with stow.
+To end this presentation, I'd like to point out that ansible is not a silver bullet.
+It is powerful, and you'll be able to do anything but it comes with a little learning curve.
 
-Everyone will have its own solution in the end, and I hope I gave you an overview of what you can achieve.
+It is still easier than building your own tool and the knowledge of ansible might prove usefulfor your work. But if you only have two or three config files to handle, there is honestly no need to use ansible, you'll be just fine with stow.
+
+Everyone will have their own solution in the end, and I hope I gave you an overview of what you could potentially achieve.
+
 Here is the link to my own dotiles repository, managed with ansible so you can take a look if you want.
 ****
 
@@ -41,6 +43,6 @@ image::openfeedback.svg[height=300,alt='Vos retours']
 
 [.notes]
 ****
-Thanks a lot for your attention, you'll find on the left a QR code to the slides, on the right one to give your feedback on this presentation, and you can find ways to contact me through my website right here.
+Thanks a lot for your attention, on the left you'll find a QR code to the slides, on the right a code to give your feedback for this presentation, and you can find the ways to contact me through my website right here.
 Thank you !
 ****
