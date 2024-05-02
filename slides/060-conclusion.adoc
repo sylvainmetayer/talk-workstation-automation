@@ -8,9 +8,12 @@ https://github.com/sylvainmetayer/dotfiles
 [.notes]
 ****
 To end this presentation, I'd like to point out that ansible is not a silver bullet.
-It is powerful, and you'll be able to do anything but it comes with a little learning curve.
 
-It is still easier than building your own tool and the knowledge of ansible might prove usefulfor your work. But if you only have two or three config files to handle, there is honestly no need to use ansible, you'll be just fine with stow.
+It is powerful, and you'll be able to do anything, but it comes with a little learning curve.
+
+It is still easier than building your own tool and the knowledge of ansible might prove useful for your work.
+
+But if you only have two or three config files to handle, there is honestly no need to use ansible, you'll be just fine with stow.
 
 Everyone will have their own solution in the end, and I hope I gave you an overview of what you could potentially achieve.
 

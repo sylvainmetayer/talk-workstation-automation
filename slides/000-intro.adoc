@@ -21,19 +21,20 @@ include::001-presentation.adoc[]
 
 [.notes]
 ****
-I had some criteria for choosing a solution, so I made the table that you can see here, to know if it fit my needs.
+I had some criteria for choosing a solution, so I made the table that you can see here, to know if it fits my needs.
 
-Managing dotfiles, to keep the configuration of my installed software or my custom bash prompt, we'll talk about it later.
+Managing configuration files, also called dotfiles, to keep the configuration of my installed software or my custom bash prompt, we'll talk about it later.
 
-Manage installed software was also part of my requirements because I  didn't want to have to remember what is installed on a fresh install and I wanted to be able to start working with my habitual tools immediately.
+Manage installed software is also part of my requirements because I don't want to have to remember what is installed on a fresh install and I want to be able to start working with my habitual tools immediately.
 
 Version control so I can keep track of changes to my configuration, as you'd do with your code.
 
-Easy to maintain : I don't want to spend hours to configure/maintain something... To configure my workstation so I can work.
+Easy to maintain : I don't want to spend hours to configure something... To configure my laptop, so I can work in the end.
 
-Multiple workstations : I'm working on multiple workstations, so I had to take that into account too, since I share some configuration between my personal and professional workstation, but I don't want to have to start over or duplicate it.
+Multiple laptop : I'm working on multiple laptop, so I have to take that into account too, since I share some configuration between my personal and professional laptop, I need a portable solution, and I don't want to have to start over or duplicate it.
 
-Secrets : Like everyone in this room, I have various secrets, SSH keys, passwords. I want a safe way to back up these without exposing these to the world.
+Secrets : Like everyone in this room, I have various secrets, SSH keys, passwords.
+I want a safe way to back up these without exposing these to the world.
 
 Annonce plan : First we'll start with a quick introduction of what dotfiles are, then we'll see a few options to manage them, before talking about the one I've chosen that fits my needs.
 ****

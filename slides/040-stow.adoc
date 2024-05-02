@@ -5,9 +5,11 @@ GNU Stow is a symlink farm manager which takes distinct sets of software and/or 
 
 [.notes]
 ****
-Now let's take a look at a dedicated tool to manage our dotfiles. Stow is a Linux tool that does one thing, and as per the Unix philosophy, it does this thing well.
+Now let's take a look at a dedicated tool to manage our dotfiles.
+Stow is a Linux tool that does one thing, and as per the Unix philosophy, it does this thing well.
 
-Stow will take a folder with a hierarchy/tree of files, and will replicate it in another directory of your filesystem (your home directory) with symlinks. So this means you can store all your dotfiles in a dedicated directory, version control this folder with Git, and with one command, it will sync your dotfiles on your workstation!
+Stow will take a folder with a tree of files, and will replicate it in another directory of your home directory with symlinks.
+This means you can store all your dotfiles in a dedicated directory, version control this folder with Git, and with one command, it will sync your dotfiles on your laptop!
 ****
 
 === Pros and Cons
@@ -33,5 +35,7 @@ Stow will take a folder with a hierarchy/tree of files, and will replicate it in
 ****
 The advantage is that it is easy to set up and quite easy to maintain, thanks to the symlinks it will create on your filetree.
 
-However, if we take a look at my requirements, we see that I can only manage dotfiles, and I'll have to find another way to manage my installed software. If you have many workstations, you'll have to store the common configuration in a dedicated folder and may need to run multiple commands to sync your dotfiles. Finally, you'll need to use another tool to store your secrets, such as age and/or pgp, and encrypt/decrypt them before being able to use them.
+However, if we take a look at my requirements, we see that I can only manage dotfiles, and I'll have to find another way to manage my installed software.
+If you have many laptop, you'll have to store the common configuration in a dedicated folder and may need to run multiple commands to sync your dotfiles.
+Finally, you'll need to use another tool to store your secrets, such as age and/or pgp, and encrypt/decrypt them before being able to use them.
 ****

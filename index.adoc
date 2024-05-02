@@ -32,7 +32,7 @@
 
 [.notes]
 ****
-Welcome to this presentation where we'll talk about how we can automate our workstation installation
+Welcome to this presentation where we'll talk about how we can automate your workstation installation
 ****
 
 include::slides/000-intro.adoc[]

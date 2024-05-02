@@ -23,7 +23,7 @@ image::PHP-logo.svg[]
 
 [.notes]
 ****
-We can make use of this method, since the majority of us here are developers. Grab your favorite language, a coffee or some tea and build your own tool !
+Let's move on to the next solution. Since the majority of us here are developers, grab your favorite language, a coffee or some tea and build your own tool !
 ****
 
 === Pros and Cons
@@ -47,11 +47,9 @@ We can make use of this method, since the majority of us here are developers. Gr
 
 [.notes]
 ****
-The main advantage is that you can do everything you want, with your favorite language ! Since you're building your own solution, you'll be able to manage your dotfiles, and then manage the installed software through system APIs. You're already working with Git, so you'll be able to version control your code.
+The main advantage is that you can do everything you want, with your favorite language !
 
-I'm sure all of you have had to manage password/secrets in one of your applications, so you'll know how to store them securely.
+You'll be able to check all these requirements and even more. You're the one in charge, from the beginning to the end.
 
-What about professional/personal workstation ? Since you're the one building the tool, I'm confident you'll come up with something that fits your needs.
-
-However, how much time will you need to craft this tool to fit every one of your needs ? It can be very time-consuming, and you may spend more time fixing your tool than configuring your workstation. It can be a fun side project though if you're looking for a new challenge, but that is not what I was looking for.
+However, how much time will you need to craft this tool to fit every one of your needs ? It can be very time-consuming, and you may spend more time fixing your tool than configuring your laptop. It can be a fun side project though but that is not what I was looking for.
 ****

@@ -31,5 +31,5 @@ It's the first time that I'm doing an English version of this talk and my first 
 
 My day-to-day tasks involve automation of various systems, working with Docker and/or Kubernetes.
 
-As I was automating tasks for some of my work I decided to give it a try and  do it on my own workstation as well
+As I was automating tasks for some of my work I decided to give it a try and do it on my own laptop as well
 ****
