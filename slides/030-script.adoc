@@ -51,5 +51,5 @@ The main advantage is that you can do everything you want, with your favorite la
 
 You'll be able to check all these requirements and even more. You're the one in charge, from the beginning to the end.
 
-However, how much time will you need to craft this tool to fit every one of your needs ? It can be very time-consuming, and you may spend more time fixing your tool than configuring your laptop. It can be a fun side project though but that is not what I was looking for.
+However, how much time will you need to craft this tool to fit every one of your needs ? It can be very time-consuming, and you may spend more time fixing your tool than configuring your computer. It can be a fun side project though but that is not what I was looking for.
 ****

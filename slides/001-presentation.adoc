@@ -25,11 +25,11 @@ Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 
 [.notes]
 ****
-French speaker, located in Bordeaux, working at Onepoint as Tech Lead.
+French speaker, located in Bordeaux, working at Onepoint as a Tech Lead.
 
 It's the first time that I'm doing an English version of this talk and my first English talk, please be kind 😃
 
 My day-to-day tasks involve automation of various systems, working with Docker and/or Kubernetes.
 
-As I was automating tasks for some of my work I decided to give it a try and do it on my own laptop as well
+As I was automating tasks for some of my work I decided to give it a try and do it on my own computer as well
 ****

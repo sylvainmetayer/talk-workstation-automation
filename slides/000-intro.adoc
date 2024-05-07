@@ -29,9 +29,9 @@ Manage installed software is also part of my requirements because I don't want t
 
 Version control so I can keep track of changes to my configuration, as you'd do with your code.
 
-Easy to maintain : I don't want to spend hours to configure something... To configure my laptop, so I can work in the end.
+Easy to maintain : I don't want to spend hours to configure something... To configure my computer, so I can work in the end.
 
-Multiple laptop : I'm working on multiple laptop, so I have to take that into account too, since I share some configuration between my personal and professional laptop, I need a portable solution, and I don't want to have to start over or duplicate it.
+Multiple computer : I'm working on multiple computer, so I have to take that into account too, since I share some configuration between my personal and professional computer, I need a portable solution, and I don't want to have to start over or duplicate it.
 
 Secrets : Like everyone in this room, I have various secrets, SSH keys, passwords.
 I want a safe way to back up these without exposing these to the world.

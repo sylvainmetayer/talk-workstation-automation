@@ -8,7 +8,7 @@
 // ****
 // Dotfiles are text files containing the configuration of your software. This can be your git configuration, your SSH hosts. These files are usually stored in your home directory and start with a dot, which explains the dotfiles' name.
 //
-// Why should you care to back these up ? Because they contain important configuration data, and you don't want to start over everytime you install a new workstation or reconfigure it.
+// Why should you care to back these up ? Because they contain important configuration data, and you don't want to start over everytime you install a new computer or reconfigure it.
 // ****
 
 == What are dotfiles?
@@ -32,9 +32,9 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 ****
 Dotfiles are text files containing the configuration of your software. This can be your git configuration, your SSH hosts. These files are usually stored in your home directory and start with a dot, which explains the dotfiles' name.
 
-Here you can see an example of `.bashrc` that export a custom environment variable.
+Here you can see an example of `bash are see` that export a custom environment variable.
 
-You probably have multiple dotfiles on your laptop for your vim configuration or your kubernetes config file.
+You probably have multiple dotfiles on your computer for your vim configuration or your kubernetes config file.
 ****
 
 == How to manage them?
@@ -45,7 +45,7 @@ https://github.com/webpro/awesome-dotfiles
 
 [.notes]
 ****
-Now that we've seen what dotfiles are, we'll see how to store them to ensure we can quickly recover them if your laptop suddenly dies.
+Now that we've seen what dotfiles are, we'll see how to store them to ensure we can quickly recover them if your computer suddenly dies.
 
 GitHub has a website where various ways to manage these dotfiles exist, and there is also an awesome-dotfiles repository which lists other ways. Right now we'll see a few options and the one I've chosen.
 ****

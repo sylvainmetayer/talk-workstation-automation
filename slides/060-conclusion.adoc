@@ -46,6 +46,6 @@ image::openfeedback.svg[height=300,alt='Vos retours']
 
 [.notes]
 ****
-Thanks a lot for your attention, on the left you'll find a QR code to the slides, on the right a code to give your feedback for this presentation, and you can find the ways to contact me through my website right here.
+Thanks a lot for your attention, on the left you'll find a code to see the slides, on the right a code to give some feedback, and you can find the ways to contact me through my website right here.
 Thank you !
 ****
