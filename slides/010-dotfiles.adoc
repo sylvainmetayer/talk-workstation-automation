@@ -47,5 +47,5 @@ https://github.com/webpro/awesome-dotfiles
 ****
 Now that we've seen what dotfiles are, we'll see how to store them to ensure we can quickly recover them if your computer suddenly dies.
 
-GitHub has a website where various ways to manage these dotfiles exist, and there is also an awesome-dotfiles repository which lists other ways. Right now we'll see a few options and the one I've chosen.
+There is an UNofficial website where various ways to manage these dotfiles exist, and there is also an awesome-dotfiles repository which lists other ways. Right now we'll see a few options and the one I've chosen.
 ****
