@@ -234,7 +234,7 @@ I can now edit my dotfiles as usual since they are symlinked, and just have to r
 ****
 Sadly, symlinks are not always an option, you may have some files that require dedicated configuration to be functional. A classic example is my gitconfig file, where I have my name/email that is different on my professional and personal computer. Thankfully, Ansible offers a templating system with loops, variables and many others options, using Jinja2 as template ENGIIIIIIIINE, so we can use it to template our file with custom values.
 
-You can look into the ansible documentation to deep dive into the possibility this module offers.
+Here is the link to the ansible documentation if you want to take a look on what you can do with this.
 ****
 
 === Secrets

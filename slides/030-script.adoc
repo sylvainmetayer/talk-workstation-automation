@@ -3,27 +3,26 @@
 
 [.column]
 --
-Shell, Python, C, PHP... The choice is yours, let's code!
+Bash, PHP, Java... The choice is yours, let's code!
 --
 
 [.column.language_logo]
 --
 image::bash-logo.svg[]
 
-image::python-logo.svg[]
+image::PHP-logo.svg[]
 
 --
 
 [.column.language_logo]
 --
-image::C-logo.svg[]
+image::java.png[]
 
-image::PHP-logo.svg[]
 --
 
 [.notes]
 ****
-Let's move on to the next solution. Since the majority of us here are developers, grab your favorite language, a coffee or some tea and build your own tool !
+Let's move on to the next solution. Since the majority of us here are developers, grab your favorite language and let's build your own tool !. As a sidenote, last night, I did not initially add java, but then I remembered this was a Java conference, so I added the Java mascot so no one would feel offended if it was missing.
 ****
 
 === Pros and Cons
