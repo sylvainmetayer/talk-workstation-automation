@@ -3,7 +3,7 @@
 
 [.column]
 --
-Bash, PHP, Java... The choice is yours, let's code!
+Bash, PHP... The choice is yours, let's code!
 --
 
 [.column.language_logo]
@@ -14,7 +14,7 @@ image::PHP-logo.svg[]
 
 --
 
-[.column.language_logo]
+[.fragment.column.language_logo]
 --
 image::java.png[]
 
@@ -22,7 +22,7 @@ image::java.png[]
 
 [.notes]
 ****
-Let's move on to the next solution. Since the majority of us here are developers, grab your favorite language and let's build your own tool !. As a sidenote, last night, I did not initially add java, but then I remembered this was a Java conference, so I added the Java mascot so no one would feel offended if it was missing.
+Let's move on to the next solution. Since the majority of us here are developers, grab your favorite language and let's build your own tool !.Even though I think I'm missing something... (fragment) This morning, I remembered this was a Java conference, so I added the Java mascot so no one would feel offended if it was missing. Now we can continue.
 ****
 
 === Pros and Cons
@@ -46,9 +46,9 @@ Let's move on to the next solution. Since the majority of us here are developers
 
 [.notes]
 ****
-The main advantage is that you can do everything you want, with your favorite language !
+The main advantage is that you can do everything you want, with your favorite language - Java I guess -!
 
 You'll be able to check all these requirements and even more. You're the one in charge, from the beginning to the end.
 
-However, how much time will you need to craft this tool to fit every one of your needs ? It can be very time-consuming, and you may spend more time fixing your tool than configuring your computer. It can be a fun side project though but that is not what I was looking for.
+However, how much time will you need to craft this tool to fit every one of your needs ? You'll need to ensure upgrade, fix, evolution, ... It can be very time-consuming, and you may spend more time fixing your tool than configuring your computer. It can be a fun side project though but that is not what I was looking for.
 ****
