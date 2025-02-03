@@ -1,19 +1,6 @@
-// == What are dotfiles?
-//
-// [quote,https://wiki.archlinux.org/title/Dotfiles]
-// User-specific application configuration is traditionally
-// stored in so called dotfiles (files with filenames starting with a dot).
-//
-// [.notes]
-// ****
-// Dotfiles are text files containing the configuration of your software. This can be your git configuration, your SSH hosts. These files are usually stored in your home directory and start with a dot, which explains the dotfiles' name.
-//
-// Why should you care to back these up ? Because they contain important configuration data, and you don't want to start over everytime you install a new computer or reconfigure it.
-// ****
+== Dotfiles, c'est quoi ?
 
-== What are dotfiles?
-
-[%linenums,shell]
+[%linenums,bash]
 .~/.bashrc
 ----
 #!/usr/bin/env bash
@@ -26,18 +13,18 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 # ...
 ----
 
-> Others : vimrc, gitconfig, ...
+> Et d'autres : vimrc, gitconfig, ...
 
 [.notes]
 ****
-Dotfiles are text files containing the configuration of your software. This can be your git configuration, your SSH hosts. These files are usually stored in your home directory and start with a dot, which explains the dotfiles' name.
+Fichiers textes qui contiennent la configuration de vos logiciels. Cela peut être votre configuration git, vos hôtes SSH. Ces fichiers sont généralement stockés dans votre répertoire personnel et commencent par un point, ce qui explique le nom de dotfiles.
 
-Here you can see an example of `bash are see` that export a custom environment variable.
+Exemple bashrc avec export d'une variable d'environnement.
 
-You probably have multiple dotfiles on your computer for your vim configuration or your kubernetes config file.
+Vous avez probablement plusieurs dotfiles sur votre ordinateur pour votre configuration vim ou votre fichier de configuration kubernetes.
 ****
 
-== How to manage them?
+== Comment fait-on ?
 
 https://dotfiles.github.io/
 
@@ -45,7 +32,5 @@ https://github.com/webpro/awesome-dotfiles
 
 [.notes]
 ****
-Now that we've seen what dotfiles are, we'll see how to store them to ensure we can quickly recover them if your computer suddenly dies.
-
-There is an UNofficial website where various ways to manage these dotfiles exist, and there is also an awesome-dotfiles repository which lists other ways. Right now we'll see a few options and the one I've chosen.
+Sites non officiels qui recensent les différentes manières de gérer ses dotfiles.
 ****

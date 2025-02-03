@@ -5,37 +5,35 @@ GNU Stow is a symlink farm manager which takes distinct sets of software and/or 
 
 [.notes]
 ****
-One of the first possible solution to manage our dotfiles is Stow.
-It is a Linux tool that does one thing, and as per the Unix philosophy, it does this thing well.
+Philosophie Unix - Stow fait une seule chose, et la fait bien.
 
-Stow will take a folder with a tree of files, and will replicate it in another directory of your home directory with symlinks.
-This means you can store all your dotfiles in a dedicated directory, version control this folder with Git, and with one command, it will sync your dotfiles on your computer!
+Va répliquer une arborescence de fichiers dans un autre répertoire de votre répertoire personnel avec des liens symboliques.
 ****
 
-=== Pros and Cons
+=== Avantages / Inconvénients
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Goal | State
-|Manage configuration files
+|Objectif | État
+|Gérer mes fichiers de configuration
 |✅
-|Manage installed software
+|Gérer les logiciels installés
 |❌
-|Version Control
+|Versionnable
 |✅
-|Maintainability
+|Facilement maintenable
 |✅
-|Manage personal and pro workstation
+|Gérer mon poste de travail pro et perso
 |😐
-|Can handle secrets
+|Gestion de secrets
 |❌
 |===
 
 [.notes]
 ****
-The advantage is that it is easy to set up and quite easy to maintain, thanks to the symlinks it will create on your filetree.
-
-However, if we take a look at my requirements, we see that I can only manage dotfiles, and I'll have to find another way to manage my installed software.
-If you have many computer, you'll have to store the common configuration in a dedicated folder and may need to run multiple commands to sync your dotfiles.
-Finally, you'll need to use another tool to store your secrets, such as age and/or pgp, and encrypt/decrypt them before being able to use them.
+- Simple à mettre en place
+- Symlink
+- Limité
+- Pas de gestion de secret (dans un fichier de config par exemple) ou étape intermédiaire de chiffrement nécessaire
+- Pas d'installation de logiciels sans script
 ****

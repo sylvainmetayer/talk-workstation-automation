@@ -1,41 +1,34 @@
 include::001-presentation.adoc[]
 
-== Pros and Cons
+== Avantages / Inconvénients
 
 [height=50.stretch,cols="1,1"]
 |===
-|Goal | State
-|Manage configuration files
+|Objectif | État
+|Gérer mes fichiers de configuration
 |?
-|Manage installed software
+|Gérer les logiciels installés
 |?
-|Version Control
+|Versionnable
 |?
-|Maintainability
+|Facilement maintenable
 |?
-|Manage personal and pro workstation
+|Gérer mon poste de travail pro et perso
 |?
-|Can handle secrets
+|Gestion de secrets
 |?
 |===
 
 [.notes]
 ****
-I had some criteria for choosing a solution, so I made the table that you can see here, to know if it fits my needs.
+Garder la config de mon prompt custom, gérer mes fichiers config, ...
 
-Managing configuration files, also called dotfiles, to keep the configuration of my installed software or my custom bash prompt, we'll talk about it later.
+Préciser que mot de passe = clé SSH / API
 
-Manage installed software is also part of my requirements because I don't want to have to remember what is installed on a fresh install and I want to be able to start working with my habitual tools immediately.
+être capable de revenir en arrière suite à changement de config pour tester/gérer facilement, comme avec du code
 
-I want to keep track of changes to my configuration, as you'd do with your code so I need something that I can version control.
+Maintenance facile / multi pc
 
-I also don't want to spend hours to configure something... To configure my computer, so I can work in the end. That's why I'm looking for something that's easy to maintain.
-
-I'm working on multiple computer, so I have to take that into account too, since I share some configuration between my personal and professional computer, I need a portable solution, and I don't want to have to start over or duplicate it.
-
-Finally, like everyone in this room, I have various secrets, SSH keys, passwords.
-I want a safe way to back up these without exposing these to the world.
-
-First we'll start with a quick introduction of what dotfiles are, then we'll see a few options to manage them, before talking about the one I've chosen that fits my needs.
+Plan : intro ce que sont les Dotfiles + explorer différentes options et celle que j'ai retenue
 ****
 

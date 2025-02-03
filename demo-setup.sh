@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo "Silent mode is on?"
-echo "Lance le script clean.sh"
-echo "T'as coupé le son ??"
+echo "T'as coupé le son ?"
+echo "T'as tout fermé ?"
 read -r
 
 echo "Battery saver"
@@ -12,5 +12,5 @@ echo "Battery saver"
 
 kubectx -u || true
 
-firefox -P work 'https://asdf.talks.sylvain.dev/'  'http://localhost:8000'
+firefox -P work 'https://workstation-automation.talks.sylvain.dev/' 'http://localhost:8000'
 systemctl restart --user xremap

@@ -7,23 +7,16 @@ https://github.com/sylvainmetayer/dotfiles
 
 [.notes]
 ****
-To end this presentation, I'd like to point out that ansible is not a silver bullet.
-
-It is powerful, and you'll be able to do anything, but it comes with a little learning curve.
-
-It is still easier than building your own tool and the knowledge of ansible might prove useful for your work.
-
-But if you only have two or three config files to handle, there is honestly no need to use ansible, you'll be just fine with stow.
-
-Everyone will have their own solution in the end, and I hope I gave you an overview of what you could potentially achieve.
-
-Here is the link to my own dotiles repository, managed with ansible so you can take a look if you want.
+- Courbe apprentissage un peu nécessaire
+- Pas de solution miracle
+- Mais plus simple que de tout faire à la main
+- Si seulement 3 fichiers de config, peut-être stow suffit
 ****
 
 [.columns.transparency%notitle.is-vcentered]
 == !
 
-image::devoxx/DevoxxFR2024_0004.jpg[background,size=fill]
+image::background.png[background,size=fill]
 
 [.column]
 --
@@ -43,9 +36,3 @@ link:https://sylvain.dev[*sylvain.dev*]
 .Feedback
 image::openfeedback.svg[height=300,alt='Vos retours']
 --
-
-[.notes]
-****
-Thanks a lot for your attention, on the left you'll find a code to see the slides, on the right a code to give some feedback, and you can find the ways to contact me through my website right here.
-Thank you !
-****

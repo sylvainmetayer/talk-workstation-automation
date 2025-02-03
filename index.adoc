@@ -1,7 +1,9 @@
-= Automate your workstation installation !
+= Automatisez l'installation de votre poste de travail !
 :docinfo: private
 :source-highlighter: highlight.js
-:highlightjsdir: js
+:highlightjs-theme: js/highlight/styles/base16/solarized-light.min.css
+:highlightjs-languages: yaml,bash,shell
+:highlightjsdir: js/highlight
 :autofit-option:
 :icons!:
 :iconfont-remote!:
@@ -10,11 +12,11 @@
 :revealjs_theme: white
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
-:revealjs_width: 1280
-:revealjs_height: 720
-:title-slide-background-image: devoxxuk_intro.jpg
-:title-slide-background-size: cover
-:title-slide-filter: blur(4px)
+:revealjs_width: 1200
+:title-slide-background-image: background.png
+:title-slide-background-repeat: repeat
+:title-slide-background-size: auto
+//:title-slide-filter: blur(4px)
 :stylesdir: css
 :customcss: css/meetup.css
 :imagesdir: images
@@ -29,11 +31,6 @@
 // TODO https://docs.asciidoctor.org/asciidoc/latest/subs/apply-subs-to-blocks/
 
 @sylvain_metayer
-
-[.notes]
-****
-Hello, thank you all for being here to talk about how we can automate your workstation installation
-****
 
 include::slides/000-intro.adoc[]
 include::slides/010-dotfiles.adoc[]

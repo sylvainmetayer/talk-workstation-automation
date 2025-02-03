@@ -1,7 +1,7 @@
 [%notitle.columns.is-vcentered.transparency]
-== Presentation
+== Présentation
 
-image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
+// image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
 
 [.column.is-one-third]
 --
@@ -10,7 +10,7 @@ image::photo.png[]
 
 [.column.is-3.has-text-left.medium]
 --
-🇫🇷 Sylvain MÉTAYER
+Sylvain MÉTAYER
 
 link:https://sylvain.dev[]
 --
@@ -25,11 +25,5 @@ Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 
 [.notes]
 ****
-French speaker, located in Bordeaux, working at Onepoint, an IT consulting firm, as a Tech Lead.
-
-As a side note, It's the first time that I'm doing an English version of this talk and my first English talk ever, so I hope your ears will get through this
-
-My day-to-day tasks involve automation on various systems, ensuring deployments go smoothly and assist the developers team to push their code to production with less friction and effort as possible.
-
-As I was automating tasks for some of my work I decided to give it a try and do it on my own computer as well
+Présentation plus orientée automatisation devops et que dans le cadre de mon boulot, à forcer d'automatiser tout pourquoi pas automatiser mon pc
 ****

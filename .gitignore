@@ -14,10 +14,9 @@ code/recipients/secrets.*.yaml
 code/recipients/*.key
 code/recipients/.sops.yaml
 
-code/demo-magic.sh
-
-# generated image
-images/plugin-manager-evil.svg
-images/plugin-manager.svg
-
 notes.txt
+
+code/demo-magic.sh
+js/highlight/
+
+highlight.js/

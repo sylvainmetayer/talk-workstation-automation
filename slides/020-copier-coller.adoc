@@ -8,22 +8,22 @@ This first option is by far the simplest.
 Copy your configuration files in a git repository, commit and push, and you're good to go!
 ****
 
-=== Pros and Cons
+=== Avantages / Inconvénients
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Goal | State
-|Manage configuration files
+|Objectif | État
+|Gérer mes fichiers de configuration
 |✅
-|Manage installed software
+|Gérer les logiciels installés
 |❌
-|Version Control
+|Versionnable
 |😐
-|Maintainability
+|Facilement maintenable
 |❌
-|Manage personal and pro workstation
+|Gérer mon poste de travail pro et perso
 |❌
-|Can handle secrets
+|Gestion de secrets
 |❌
 |===
 
@@ -32,8 +32,8 @@ Copy your configuration files in a git repository, commit and push, and you're g
 However, these are a few drawbacks to this method.
 
 First, you can indeed manage your dotfiles, but can't handle installed software, you'll have to reinstall it by yourself and keep a list of what is installed.
-You also don't really have an efficient version control tracking method, since you need to manually copy/paste everything.
-This makes the maintainability of this solution not too good, as you need to maintain two folders/repository to your professional and personal computer.
+You also don't really have an efficient ve rsion control tracking method, since you need to manually copy/paste everything.
+This makes the maintainabil ity of this solution not too good, as you need to maintain two folders/repository to your professional and personal computer.
 You also need to use another tool to store your secrets, since you don't want to store them in plaintext.
 ****
 

@@ -1,9 +1,9 @@
 [.columns.is-vcentered]
-== Homemade script
+== Un script maison
 
 [.column]
 --
-Bash, PHP... The choice is yours, let's code!
+Du shell, du python, du C, du PHP... Venez comme vous êtes, on va coder !
 --
 
 [.column.language_logo]
@@ -14,41 +14,36 @@ image::PHP-logo.svg[]
 
 --
 
-[.fragment.column.language_logo]
---
-image::java.png[]
-
---
-
 [.notes]
 ****
-Let's move on to the next solution. Since the majority of us here are developers, grab your favorite language and let's build your own tool !.Even though I think I'm missing something... (fragment) This morning, I remembered this was a Java conference, so I added the Java mascot so no one would feel offended if it was missing. Now we can continue.
+On passe à la solution suivante. Comme la majorité d'entre nous ici sont des développeurs, prenez votre langage préféré et on va coder !
 ****
 
-=== Pros and Cons
+=== Avantages / Inconvénients
 
 [%autowidth.stretch,cols="1,1"]
 |===
-|Goal | State
-|Manage configuration files
+|Objectif | État
+|Gérer mes fichiers de configuration
 |✅
-|Manage installed software
+|Gérer les logiciels installés
 |✅
-|Version Control
+|Versionnable
 |✅
-|Maintainability
+|Facilement maintenable
 |😐
-|Manage personal and pro workstation
+|Gérer mon poste de travail pro et perso
 |✅
-|Can handle secrets
+|Gestion de secrets
 |✅
 |===
 
 [.notes]
 ****
-The main advantage is that you can do everything you want, with your favorite language - Java I guess -!
+- Avantage On répond enfin au besoin ! On choisit un langage qu'on aime !
+- Gestion de secret possible (dans un fichier de config par exemple)
+- Inconvénient : chronophage // Il faut installer les pré-requis au langage, le maintenir, selon le langage, pas garanti que l'on puisse tout faire.
+- Facile : selon comment vous l'avez conçu... :) ?
 
-You'll be able to check all these requirements and even more. You're the one in charge, from the beginning to the end.
-
-However, how much time will you need to craft this tool to fit every one of your needs ? You'll need to ensure upgrade, fix, evolution, ... It can be very time-consuming, and you may spend more time fixing your tool than configuring your computer. It can be a fun side project though but that is not what I was looking for.
+Peut-être un side project sympa, mais chronophage
 ****
