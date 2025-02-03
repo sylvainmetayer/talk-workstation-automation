@@ -200,7 +200,7 @@ Avantage, je peux maintenant éditer mes dotfiles comme d'habitude puisqu'ils so
 
 === Templating
 
-[%linenums,yaml]
+[source,yaml,%linenums]
 ----
 - name: Template gitconfig
   ansible.builtin.template:
@@ -208,7 +208,7 @@ Avantage, je peux maintenant éditer mes dotfiles comme d'habitude puisqu'ils so
     dest: "~/.gitconfig"
 ----
 
-[%linenums,ini]
+[source,ini,%linenums]
 .roles/git_config/templates/gitconfig.j2
 ----
 [user]

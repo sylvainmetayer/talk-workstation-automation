@@ -2,7 +2,7 @@
 :docinfo: private
 :source-highlighter: highlight.js
 :highlightjs-theme: js/highlight/styles/base16/solarized-light.min.css
-:highlightjs-languages: yaml,bash,shell
+:highlightjs-languages: yaml,bash,shell,ini
 :highlightjsdir: js/highlight
 :autofit-option:
 :icons!:
