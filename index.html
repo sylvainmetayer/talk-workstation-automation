@@ -452,8 +452,7 @@ export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 <div class="paragraph"><p>Peut déployer sur parc de machine distant ou une seule machine locale</p></div>
 <div class="paragraph"><p>roles/playbooks</p></div>
 <div class="paragraph"><p>Notion communauté + qui va permettre de faire assemblage de roles pour répondre au besoin ou création roles et publication</p></div>
-<div class="paragraph"><p>Syntaxe YAML</p></div></aside></div></section><section id="_concrètement_comment_fait_on"><h2>Concrètement, comment fait-on ?</h2><div class="slide-content"><div class="imageblock"><img src="images/tell_me_more.gif" alt="Tell me more" width="80%"></div>
-<aside class="notes"><div class="paragraph"><p>Structure playbook/role ansible et comment je l&#8217;utilise pour déployer mon poste</p></div></aside></div></section><section id="_structure"><h2>Structure</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="" data-lang="text">├── playbooks
+<div class="paragraph"><p>Syntaxe YAML</p></div></aside></div></section><section id="_structure"><h2>Structure</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="" data-lang="text">├── playbooks
 │   ├── perso
 │   ├── pro
 │   ├── ├── main.yaml
@@ -554,26 +553,23 @@ Playbook run took 0 days, 0 hours, 0 minutes, 1 seconds</code></pre></div></div>
     src: "secret_data.txt"
     dest: ~/secret_data.txt
     mode: "0600"</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>ansible transparent sur usage vault, va utiliser password indiqué. Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div>
-<div class="paragraph"><p>Parfois, on a besoin de stocker des secrets sur notre ordinateur, comme un token pour s&#8217;authentifier sur une registry privée.</p></div></aside></div></section><section id="_gestion_des_secrets_2"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ANSIBLE_VAULT;1.1;AES256
+<div class="openblock fragment"><div class="content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ANSIBLE_VAULT;1.1;AES256
 61613732623662623936633538623331663661303939636439316236633333356561646562356335
 3936383330653736393132313565643539326666666366360a323539623938626232663965336264
 32616364633761616231336464303732323936393131346536646465313162623537303363366265
 6334613463623635620a663765366238353435373336373832396536386164346266626433303165
-66336136313064323461613461303461643864316361653838333565396633616564</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>On peut tranquillement versionner ce fichier, pour peu que le mot de passe utilisé soit suffisamment robuste.</p></div>
-<div class="paragraph"><p>ansible transparent sur usage ansible-vault, va utiliser password indiqué. Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_gestion_des_secrets_3"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3,4|5" data-lang="shell">$ ansible-vault create secret_data.txt
+66336136313064323461613461303461643864316361653838333565396633616564</code></pre></div></div></div></div>
+<aside class="notes"><div class="paragraph"><p>ansible transparent sur usage vault, va utiliser password indiqué. Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div>
+<div class="paragraph"><p>Parfois, on a besoin de stocker des secrets sur notre ordinateur, comme un token pour s&#8217;authentifier sur une registry privée.</p></div>
+<div class="paragraph"><p>On peut tranquillement versionner ce fichier, pour peu que le mot de passe utilisé soit suffisamment robuste.</p></div>
+<div class="paragraph"><p>ansible transparent sur usage ansible-vault, va utiliser password indiqué. Possible de le préciser dans un fichier pour éviter d&#8217;avoir à le retaper à chaque fois.</p></div></aside></div></section><section id="_gestion_des_secrets_2"><h2>Gestion des secrets</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3,4|5" data-lang="shell">$ ansible-vault create secret_data.txt
 $ ansible-vault view secret_data.txt
 Vault password:
 Hello TNT#25 ! :)
 $ ansible-playbook playbooks/work/main.yaml --ask-vault-pass</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Création d&#8217;un vault et saisie d&#8217;un mot de passe. A l&#8217;usage, utilisation de "--ask-vault-pass" et ansible va demander le mot de passe pour déchiffrer le fichier.</p></div>
 <div class="paragraph"><p>Pour les curieux, le mot de passe est :
-demo</p></div></aside></div></section><section id="_plusieurs_postes"><h2>Plusieurs postes ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="" data-lang="text">├── perso
-│   ├── main.yaml
-└── work
-    └── main.yaml</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>1 playbook = combinaison de tâches et de rôles avec des variables personnalisées. Pour gérer plusieurs postes, il suffit de créer un nouveau playbook et d&#8217;utiliser les rôles nécessaires et/ou de surcharger les valeurs des variables.</p></div></aside></div></section><section id="_mais_encore"><h2>Mais encore ?</h2><div class="slide-content"><div class="imageblock"><img src="images/battery_off.png" alt="Indicateur batterie off"></div>
+demo</p></div></aside></div></section><section id="_mais_encore"><h2>Mais encore ?</h2><div class="slide-content"><div class="imageblock"><img src="images/battery_off.png" alt="Indicateur batterie off"></div>
 <div class="openblock fragment"><div class="content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">- name: Display battery percentage
   dconf:
     key: "/org/gnome/desktop/interface/show-battery-percentage"
