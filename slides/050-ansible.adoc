@@ -13,14 +13,14 @@ Notion communauté +++ qui va permettre de faire assemblage de roles pour répon
 Syntaxe YAML
 ****
 
-=== Concrètement, comment fait-on ?
-
-image::tell_me_more.gif[alt='Tell me more',width=80%]
-
-[.notes]
-****
-Structure playbook/role ansible et comment je l'utilise pour déployer mon poste
-****
+// === Concrètement, comment fait-on ?
+//
+// image::tell_me_more.gif[alt='Tell me more',width=80%]
+//
+// [.notes]
+// ****
+// Structure playbook/role ansible et comment je l'utilise pour déployer mon poste
+// ****
 
 === Structure
 
@@ -242,22 +242,20 @@ Symlink pas toujours possible, exemple git config pour email différent pro/pers
     mode: "0600"
 ----
 
+[%step]
+--
+[source,bash,%linenums]
+----
+include::../code/secret_data.txt[]
+----
+--
+
 [.notes]
 ****
 ansible transparent sur usage vault, va utiliser password indiqué. Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
 
 Parfois, on a besoin de stocker des secrets sur notre ordinateur, comme un token pour s'authentifier sur une registry privée.
-****
 
-=== Gestion des secrets
-
-[%linenums,bash]
-----
-include::../code/secret_data.txt[]
-----
-
-[.notes]
-****
 On peut tranquillement versionner ce fichier, pour peu que le mot de passe utilisé soit suffisamment robuste.
 
 ansible transparent sur usage ansible-vault, va utiliser password indiqué. Possible de le préciser dans un fichier pour éviter d'avoir à le retaper à chaque fois.
@@ -282,20 +280,20 @@ Pour les curieux, le mot de passe est :
 include::../code/password_file[]
 ****
 
-=== Plusieurs postes ?
-
-[%linenums,text]
-----
-├── perso
-│   ├── main.yaml
-└── work
-    └── main.yaml
-----
-
-[.notes]
-****
-1 playbook = combinaison de tâches et de rôles avec des variables personnalisées. Pour gérer plusieurs postes, il suffit de créer un nouveau playbook et d'utiliser les rôles nécessaires et/ou de surcharger les valeurs des variables.
-****
+// === Plusieurs postes ?
+//
+// [%linenums,text]
+// ----
+// ├── perso
+// │   ├── main.yaml
+// └── work
+//     └── main.yaml
+// ----
+//
+// [.notes]
+// ****
+// 1 playbook = combinaison de tâches et de rôles avec des variables personnalisées. Pour gérer plusieurs postes, il suffit de créer un nouveau playbook et d'utiliser les rôles nécessaires et/ou de surcharger les valeurs des variables.
+// ****
 
 === Mais encore ?
 
