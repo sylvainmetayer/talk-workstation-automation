@@ -35,6 +35,16 @@
     font-size: 1em;
 }
 
+footer {
+    z-index: 10;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    bottom: -30px;
+    min-height: 80px;
+    text-align: center;
+}
+
 body::after {
     /*background-color: rgba(0, 0, 0, 0.1);*/
     content: url("../images/tnt/logo.png");
